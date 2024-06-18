@@ -1,0 +1,36 @@
+.navbar{
+    height : 20px;
+    display: flex;
+    max-width :1366px;
+    height: 100px;
+    position: absolute;
+    background-color: transparent;
+    color: whitesmoke;
+    z-index: 100;
+    .wrappern{
+
+        width :1366px;
+        height: 100px;
+        display: flex;
+        margin-left: 90px;
+        margin-right:  40px;
+        justify-content: space-between;
+        align-items: center;
+        span{
+            font-weight: bold;
+            font-size: 1.5rem;
+            //scolor: greenyellow;
+        }
+        .social{
+            display: flex;
+            gap:20px;
+            align-items: center;
+            height: 20px;
+            img{
+            width: 20px;
+            height: 20px;
+
+            }
+        }
+    }
+}
