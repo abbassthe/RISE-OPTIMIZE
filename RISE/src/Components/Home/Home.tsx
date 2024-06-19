@@ -12,14 +12,14 @@ function Home() {
           >
             <div className="u-clearfix u-sheet u-valign-bottom u-sheet-1">
               <h3 className="u-text u-text-body-alt-color u-text-default u-text-1">
-                keep your love of
+                Let us protecct
               </h3>
               <h1 className="u-custom-font u-font-playfair-display u-text u-text-body-alt-color u-text-default u-text-2">
                 nature
               </h1>
               <p className="u-text u-text-body-alt-color u-text-3">
-                When words become unclear, I shall focus with photographs. When
-                images become inadequate, I shall be content with silence.
+                With the help of FlutterForcast we can fight pests images become
+                using satiltie imagry and machine learning
               </p>
               <a
                 href="#"
