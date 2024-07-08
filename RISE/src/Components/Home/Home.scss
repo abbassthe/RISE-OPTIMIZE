@@ -3,13 +3,12 @@
 *{
     margin : 0;
     padding: 0;
-
     box-sizing: border-box;
 }
 
 .Banner{
 position: relative;
-background-image: url('pexelsphoto3452388.jpeg');
+background-color:#DEF9C4;
 width: 100%;
 height: 125vh;
 background-size: cover;
@@ -82,12 +81,13 @@ position: absolute;
 align-items: baseline;
 justify-content: center;
 margin-left: 31%;
-color: azure;
+color: #50B498;
 }
 .u-section-1 .u-sheet-1 {
     min-height: 682px;
     font-family: Playfair;
     text-align: center;
+    margin-top: 10%;
   }
 
   .u-section-1 .u-text-1 {
