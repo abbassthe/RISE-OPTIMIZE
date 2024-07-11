@@ -9,14 +9,15 @@ import FibonacciDiv from "./Components/test/tst";
 import "./App.css";
 import Globe from "./Components/Globe/Globe";
 import Model from "./Components/Locust/Model";
-import Scene from "./Components/Locust/Scene";
-
+import Scene from "./Components/Locust/Scene"; 
+ 
 function App() {
   return (
-    <>
-      <div className="wrap">
+    <> 
+         <div className="wrap">
         <section>
           <Navbar />
+ 
           <Home />
           <Globe />
           <div className="t">
@@ -31,8 +32,9 @@ function App() {
           <About2 />
           <Vid2 />
           <Contact />
+ 
         </section>
-      </div>
+      </div> 
     </>
   );
 }
