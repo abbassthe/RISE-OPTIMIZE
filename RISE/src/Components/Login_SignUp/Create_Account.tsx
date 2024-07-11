@@ -1,3 +1,4 @@
+@ -1,349 +0,0 @@
 import React, { useState } from 'react';
 import {
     View,

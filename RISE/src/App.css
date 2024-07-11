@@ -1,0 +1,47 @@
+.example::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .example {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .testWrap{
+    position: sticky;
+    top: 30%;
+    height: 70vh;
+  }
+  .t{
+    height: 360vh;
+    width: 100vw;
+
+  }
+  #txt1
+  {
+    position:absolute;
+    margin-top: 50%;
+    margin-left: 15%;
+    font-family: Playfair;
+    text-align: center;
+    height: 20px;
+    text-decoration: none;
+    font-size: 3rem;
+
+    color: #468585;
+
+  }
+  #txt2
+  {
+    position:absolute;
+    margin-top: 100%;
+    margin-left: 75%;
+    font-family: Playfair;
+    text-align: center;
+    height: 20px;
+    text-decoration: none;
+    font-size: 3rem;
+
+    color: #468585;
+
+  }
