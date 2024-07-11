@@ -1,5 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 .wrapperAbout{
     width: 100%;
-    height: 500vh;
-    background-color: white;
+    height: 200vh;
+    background-color: #468585;
+    display: flex;
+    .test{
+        display: inline-block;
+        margin-left: 10%;
+    }
+    .percentage{
+        color :#9CDBA6;
+        position: sticky;
+        display:inline-block;
+        vertical-align:middle;
+        font-size: 7rem;
+        margin-top: 400px;
+        margin-bottom: 250px;
+        width: 200px;
+        height: 200px;
+        margin-left: 1%;
+        //margin-left: 70%;
+        top: 40%;
+
+        font-family: Playfair;
+        text-align: center;
+        span{
+            font-size: 1rem;
+            display: flex;
+            margin-left: 1%;
+            font-size: 2rem;
+        }
+    }
+
+    .land{
+        border-radius: 50%;
+        overflow: hidden;
+        border-radius: 50%;
+        position: sticky;
+        display:inline-block;
+        vertical-align:middle;
+        width: 43%;
+        height: 45%;
+        margin-top: 10%;
+        margin-left: 15%;
+        top: 6%;
+        .land_img{
+            width: 100%;
+            height: 100%;
+            position: sticky;
+
+        }
+    }
 }
+
