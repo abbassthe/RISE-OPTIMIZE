@@ -17,6 +17,7 @@ function App() {
       <div className="wrap">
         <section>
           <Navbar />
+
           <Home />
           <Globe />
           <div className="t">

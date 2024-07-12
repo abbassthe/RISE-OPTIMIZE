@@ -241,21 +241,16 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         paddingHorizontal: 20,
         paddingTop: 20,
-        backgroundColor: '#ffffff',
     },
     header: {
         marginBottom: 10,
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#333333',
     },
     input: {
         borderWidth: 1,
-        borderColor: '#dddddd',
+        borderColor: 'lightgray',
         borderRadius: 5,
         padding: 10,
         marginBottom: 10,
-        backgroundColor: '#f9f9f9',
     },
     inputError: {
         borderColor: 'red', // Change border color to indicate error
@@ -267,30 +262,29 @@ const styles = StyleSheet.create({
     checkboxContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 20,
+        marginBottom: 10,
     },
     checkbox: {
         width: 20,
         height: 20,
         borderRadius: 3,
-        borderWidth: 2,
-        borderColor: '#333333',
+        borderWidth: 3,
+        borderColor: '#000',
         marginRight: 10,
-        backgroundColor: '#ffffff',
+        borderColor: 'black',
     },
     checked: {
-        backgroundColor: '#333333',
+        backgroundColor: '#000',
     },
     termsText1: {
-        fontSize: 14,
-        color: '#333333',
+        fontSize: 13,
     },
     blueText: {
-        fontSize: 14,
+        fontSize: 13,
         color: 'blue',
     },
     createButton: {
-        backgroundColor: '#333333',
+        backgroundColor: 'black',
         paddingVertical: 15,
         paddingHorizontal: 40,
         borderRadius: 5,
@@ -309,27 +303,27 @@ const styles = StyleSheet.create({
     separator: {
         flex: 1,
         height: 1,
-        backgroundColor: '#dddddd',
+        backgroundColor: 'lightgray',
         marginHorizontal: 10,
     },
     orText: {
         fontSize: 14,
-        color: '#888888',
+        color: 'gray',
     },
     logosContainer: {
         flexDirection: 'row',
+        marginTop: 10,
         justifyContent: 'space-around',
-        marginBottom: 20,
+        marginBottom: 10,
     },
     logoContainer: {
-        width: 60,
+        width: 120,
         height: 60,
         borderWidth: 1,
-        borderColor: '#dddddd',
+        borderColor: 'lightgray',
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#f9f9f9',
     },
     logo: {
         width: 40,
@@ -341,8 +335,9 @@ const styles = StyleSheet.create({
     },
     loginText: {
         fontWeight: 'bold',
-        color: '#333333',
+        color: 'black',
         fontSize: 16,
+        marginRight: 5,
     },
     loginLink: {
         color: 'blue',
