@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function Vid2() {
   const { scrollY } = useScroll();
-  const spacerHeight = 87000;
+  const spacerHeight = 81000;
   const scale = useTransform(
     scrollY,
     [spacerHeight, spacerHeight + window.innerHeight],

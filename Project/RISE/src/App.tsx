@@ -10,7 +10,7 @@ import "./App.css";
 import Globe from "./Components/Globe/Globe";
 import Model from "./Components/Locust/Model";
 import Scene from "./Components/Locust/Scene";
-
+import Scene2 from "./Components/robo_insect/Scene";
 function App() {
   return (
     <>
@@ -30,6 +30,7 @@ function App() {
           <About />
           <About2 />
           <Vid2 />
+          <Scene2 />
           <Contact />
         </section>
       </div>
