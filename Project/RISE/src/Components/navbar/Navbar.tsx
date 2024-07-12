@@ -1,10 +1,10 @@
 import "./Navbar.scss";
 import Sidebar from "./Sidebar/Sidebar";
-
+ 
 function Navbar() {
-  return (
+  return ( 
     <div className="navbar">
-      <Sidebar />
+      <Sidebar /> 
       <div className="wrappern">
         <span>FlutterForcast</span>
         <div className="social">
@@ -20,7 +20,7 @@ function Navbar() {
           </span>
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
 export default Navbar;
