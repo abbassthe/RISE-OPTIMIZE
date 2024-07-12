@@ -2,6 +2,7 @@ import { spring } from "framer-motion";
 import { motion } from "framer-motion";
 import "./Sidebar.scss";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 function Sidebar() {
   const [open, setOpen] = useState(false);
   const variants = {
@@ -23,21 +24,22 @@ function Sidebar() {
     },
   };
   const items = [
-    "Homepage",
-    "education",
-    "experience",
-    "competitions",
-    "Contact",
+    { name: "Homepage", path: "/homepage" },
+    { name: "Map", path: "/map" },
+    { name: "Education", path: "/education" },
+    { name: "Experience", path: "/experience" },
+    { name: "Competitions", path: "/competitions" },
+    { name: "Contact", path: "/contact" },  
   ];
 
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
       <motion.div className="bg" variants={variants}>
         <div className="links">
-          {items.map((item) => (
-            <a href={`#${item}`} key={item}>
-              {item}
-            </a>
+        {items.map((item) => (
+            <NavLink to={item.path} key={item.name}>
+              {item.name}
+            </NavLink>
           ))}
         </div>
       </motion.div>
@@ -70,7 +72,7 @@ function Sidebar() {
           ></motion.path>
         </svg>
       </button>
-    </motion.div>
+    </motion.div> 
   );
 }
 export default Sidebar;
