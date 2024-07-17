@@ -17,7 +17,6 @@ function App() {
       <div className="wrap">
         <section>
           <Navbar />
-
           <Home />
           <Globe />
           <div className="t">
@@ -32,7 +31,6 @@ function App() {
           <About2 />
           <Vid2 />
           <Scene2 />
-          <Contact />
         </section>
       </div>
     </>
