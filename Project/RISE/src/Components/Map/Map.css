@@ -1,108 +1,60 @@
 
-body{
-    margin : 0;
-    padding: 0;
- 
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    width: 100vw;
 }
-#c1{   
-    width: 100%; 
-    align-items: center;  
-    justify-content: center;
-    align-items: center; 
+#ynot{
+    height: 100vh;
 
-
-    display: block;
+    overflow: hidden;
 }
 #map {
-    width: 100%;
-    height: 400px;
-    
+    flex: 1;
+    position: relative;
+    height: 80vh;
 }
-#container {  
-    width: 50%; 
-    margin: 700px; 
+#myChart{
+    height: 15vh;
+    width: 98vw !important;
+}
+
+#c {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
-    margin-top: 100px;    
-    box-sizing: border-box;
- 
+    align-items: center;
+    height: 20vh;
+    z-index: 100000;
+    background-color: #333;
 }
+
 #bar1 {
-    width: 100%;
-    flex-shrink: 6.5;
-    height: 100%;
-    background-color: rgb(34, 7, 2);
-    top: 0;
-    left: 0;
-}
-#bar2 {
-    width: 100%;
-    flex-shrink: 6.5;
-    height: 100%;
-    background-color: rgb(34, 6, 3);
-    top: 0;
-    left: 0;
-}
-button {
-    display: block;
-    margin-bottom: 15px;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    font-size: 0.99cm;
-    font-weight: bold;
-    border-style: solid;
-    border-width: 0.1cm;
-    border-color: black;
+    width: 98vw;
+    background-color: #333;
+    z-index: 1000000;
+
 }
 
-input {
-    appearance: none;
-
-    -webkit-appearance: none;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-    margin: 5px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 50px;
-
-    height: 9px;
-
-    background: #ccc;
-    background-color: #f50;
-    transition: 0.2s ease-in-out;
-}
 #yearInput {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-direction: row;
-    color: white;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 0.64cm;
-}
-#ts1 {
-    font-family: Arial, sans-serif;
-    display: flex;
-    width: 100%;
-    height: 20h; 
-    background-color: #228b22;
-    bottom: 0;
+    flex-direction: column;
+    align-items: center;
 }
 
-#ts2 {
+#range {
     width: 100%;
-    height: 100%;
 }
 
-.map-container {
-    height: 400px;
-}
-canvas{
-    position: sticky;
-    top : 0;
+
+
+
+
+.ts2 {
+    width: 100%;
     height: 100%;
+
 }
+
