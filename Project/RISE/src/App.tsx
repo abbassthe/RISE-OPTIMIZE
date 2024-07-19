@@ -11,25 +11,38 @@ import Globe from "./Components/Globe/Globe";
 import Model from "./Components/Locust/Model";
 import Scene from "./Components/Locust/Scene";
 import Scene2 from "./Components/robo_insect/Scene";
+import login from "./Components/Login_Sigup/Login";
 function App() {
   return (
     <>
       <div className="wrap">
         <section>
+          //
           <Navbar />
+          //
           <Home />
+          //
           <Globe />
+          //
           <div className="t">
-            <span id="txt1">HELLO</span>
-            <span id="txt2">World</span>
+            // <span id="txt1">HELLO</span>
+            // <span id="txt2">World</span>
+            //{" "}
             <div className="testWrap">
-              <Scene />
+              // <Scene />
+              //{" "}
             </div>
+            //
           </div>
+          //
           <Vid />
+          //
           <About />
+          //
           <About2 />
+          //
           <Vid2 />
+          //
           <Scene2 />
         </section>
       </div>
