@@ -20,6 +20,6 @@ from django.urls import path
 from django.conf.urls import include
 
 urlpatterns = [
-    path("", include("maps.urls")),
+    # path("Locust", include("maps.urls")),
     path("admin/", admin.site.urls),
 ]

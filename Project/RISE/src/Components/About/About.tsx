@@ -6,18 +6,18 @@ function About() {
   const { scrollYProgress } = useScroll();
   const [scale, setScale] = useState(1);
 
-  const z = useTransform(scrollYProgress, [0.07, 0.1], [1, 9]);
+  const z = useTransform(scrollYProgress, [0.63, 0.7], [1, 9]);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.07 && latest <= 0.1) {
+      if (latest >= 0.63 && latest <= 0.7) {
         setScale(1 / z.get());
-      } else if (latest < 0.07) {
+      } else if (latest < 0.63) {
         setScale(1);
       } else {
         setScale(0.1);
       }
-      console.log(z.get());
+      console.log(scrollYProgress.get());
     });
 
     return () => unsubscribe();

@@ -1,6 +1,7 @@
-from django.conf.urls import url
-from . import views
+from django.contrib import admin
+from django.urls import path
+from maps import views
 
-urlpatterns = [
-    url(r"", views.default_map, name="default"),
-]
+# urlpatterns = [
+#    path("", views.render()),
+# ]

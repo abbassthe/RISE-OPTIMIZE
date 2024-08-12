@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="wrapperh">
       <div className="Banner">
-        <section>
+        <section id="textSection">
           <section
             className="u-clearfix u-image u-section-1"
             id="carousel_500f"

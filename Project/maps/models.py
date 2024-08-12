@@ -5,8 +5,8 @@ from django.contrib.gis.db import models
 
 
 class Marker(models.Model):
-    name = models.CharField(max_length=255)
     location = models.PointField()
+    Confidence = models.DecimalField(max_digits=10, decimal_places=10)
 
     def __str__(self):
-        return self.name
+        return "Locust breeding spot"

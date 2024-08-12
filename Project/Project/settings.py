@@ -41,14 +41,12 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
     "rest_framework",
     "rest_framework_gis",
     "maps",
 ]
 CORES_ALLOWED_ORIGINS = ["http://localhost:5173/"]
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleWare"
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -85,9 +83,9 @@ WSGI_APPLICATION = "Project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "HOST": "database",
-        "NAME": "mymap",
-        "PASSWORD": "password",
+        "HOST": "localhost",
+        "NAME": "postgres",
+        "PASSWORD": "abbass122",
         "PORT": 5432,
         "USER": "postgres",
     }

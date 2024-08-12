@@ -8,4 +8,4 @@ from maps.models import Marker
 
 @admin.register(Marker)
 class MarkerAdmin(admin.GISModelAdmin):
-    list_display = ("name", "location")
+    list_display = ("Confidence", "location")
