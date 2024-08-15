@@ -1,0 +1,25 @@
+The dataset simulates insect observations from January 2023 to August 2024. It includes 16 species of insects commonly found in various habitats:
+
+Apis mellifera (European honey bee)
+Bombus terrestris (Buff-tailed bumblebee)
+Vespula vulgaris (Common wasp)
+Pieris rapae (Small white butterfly)
+Aglais io (European peacock butterfly)
+Vanessa atalanta (Red admiral butterfly)
+Gonepteryx rhamni (Common brimstone butterfly)
+Lasius niger (Black garden ant)
+Formica rufa (Red wood ant)
+Myrmica rubra (European fire ant)
+Xylocopa violacea (Violet carpenter bee)
+Osmia bicornis (Red mason bee)
+Vespa crabro (European hornet)
+Polistes dominula (European paper wasp)
+Papilio machaon (Old World swallowtail butterfly)
+Coccinella septempunctata (Seven-spot ladybird)
+
+The data represents co-occurrences of these species across a geographic area (longitudes -5 to 5, latitudes 50 to 55) over time.
+
+1-generate_sample_data.py
+2-MatrixGeneration.py
+3-TrainModel.py
+4-infer.py
