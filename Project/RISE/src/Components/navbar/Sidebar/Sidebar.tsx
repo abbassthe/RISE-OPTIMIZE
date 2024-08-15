@@ -29,14 +29,15 @@ function Sidebar() {
     { name: "Education", path: "/education" },
     { name: "Experience", path: "/experience" },
     { name: "Competitions", path: "/competitions" },
-    { name: "Contact", path: "/contact" },  
+    { name: "Contact", path: "/contact" },
+    { name: "Insects", path: "/insects" },
   ];
 
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
       <motion.div className="bg" variants={variants}>
         <div className="links">
-        {items.map((item) => (
+          {items.map((item) => (
             <NavLink to={item.path} key={item.name}>
               {item.name}
             </NavLink>
@@ -72,7 +73,7 @@ function Sidebar() {
           ></motion.path>
         </svg>
       </button>
-    </motion.div> 
+    </motion.div>
   );
 }
 export default Sidebar;
