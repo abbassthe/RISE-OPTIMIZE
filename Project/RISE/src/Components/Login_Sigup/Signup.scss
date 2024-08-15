@@ -1,16 +1,751 @@
-.imagediv2{
-    width : 60vw;height: 90vh;
-    background-color:#DEF9C4;
-    border-radius: 10%;
-}
-.App2{
-    justify-content: center;
-    align-items: center;
+:root {
+    --red-rgb: 222 249 196;
+    --blue-rgb: 156 219 166;
+    --green-rgb: 80 180 152;
+    --yellow-rgb: 70 133 133;
+    
+    --background-rgb: 204 213 174;
+  }
+  :root {
+      --green: rgb(222 ,249 ,196);
+      --red: rgb(156 ,219, 166);
+      --dusky-green:  rgb(156 ,219, 166);;
+      --opac-white:rgb(222 ,249 ,196, .8);
+      --form-txt:  rgba(70 ,133, 133, .5);
+      --darky: #1d2b3a;
+      --light-grey:  204 213 174;
+  }
+  .App2 {
+    height: 100vh;
+    width: 100%;
     display: flex;
-    padding-top: 2.8%;
+    align-items: center;
+    justify-content: center;
+    background: rgb(var(--background-rgb));
+    overflow: hidden;
+    perspective: 2000px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #container {
+    width: 140rem !important;
+    height: 140rem;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: repeat(40, 1fr);
+    grid-template-columns: repeat(40, 1fr);
+    position: absolute;
+    transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
+  }
+  
+  #container:after,
+  #container:before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    pointer-events: none;
+  }
+  
+
+  #container:after {
+    z-index: 3;
+    background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
+  }
+  
+  .tile {  
+    border: 1px solid rgb(255 255 255 / 25%);
+    transition: background-color 1500ms;
+  }
+  
+  .tile:hover {
+    transition-duration: 0ms;
+  }
+  
+  .tile:nth-child(4n):hover {
+    background-color: rgb(var(--red-rgb));
+  }
+  
+  .tile:nth-child(4n + 1):hover {
+    background-color: rgb(var(--blue-rgb));
+  }
+  
+  .tile:nth-child(4n + 2):hover {
+    background-color: rgb(var(--green-rgb));
+  }
+  
+  .tile:nth-child(4n + 3):hover {
+    background-color: rgb(var(--yellow-rgb));
+  }
+  
+  .tile:nth-child(7n):hover {
+    background-color: rgb(var(--blue-rgb));
+  }
+  
+  .tile:nth-child(7n + 3):hover {
+    background-color: rgb(var(--green-rgb));
+  }
+  
+  .tile:nth-child(7n + 5):hover {
+    background-color: rgb(var(--yellow-rgb));
+  }
+  
+  .tile:nth-child(7n + 6):hover {
+    background-color: rgb(var(--red-rgb));
+  }
+  
+  .tile:nth-child(11n + 1):hover {
+    background-color: rgb(var(--red-rgb));
+  }
+  
+  .tile:nth-child(11n + 4):hover {
+    background-color: rgb(var(--blue-rgb));
+  }
+  
+  .tile:nth-child(11n + 7):hover {
+    background-color: rgb(var(--green-rgb));
+  }
+  
+  .tile:nth-child(11n + 10):hover {
+    background-color: rgb(var(--yellow-rgb));
+  }
+  
+  #SignupWrapper{
+    z-index : 0;
+    width : fit-content ;
+    height : fit-content;
+    background: rgba(254, 250, 224, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(254, 250, 224, 0.38);
+    border-radius  : 1.75rem  ;
+  }
+  @media only screen and (max-width: 540px) {
+     
+      /* 
+          For mobile phones: 
+      */
+      .App2 {
+          width: 100%;
+          overflow: visible;
+      }
+      .image-container > [class] {
+          transform: scale(1);
+      }
+      .quote {
+          margin-top: -50px;
+      }
+      .card-container {
+          grid-template-rows: 100vh minmax(100vh, auto);
+          grid-template-columns: none;
+          overflow: hidden;
+          height: auto;
+      }
+      .image-container {
+          width: 100%;
+          position: relative;
+      }
+      .image-container > img {
+          width: calc(110%);
+      }
+      .error {
+          font-size: 13px;
+      }
+      .form-container {
+          display: grid;
+          place-items: center ;
+          grid-template-columns: none;
+          grid-template-rows: none;
+          gap: 20px;
+          width: 100%;
+          gap: 45px;
+          padding: 0;
+          color: rgba(255, 255, 255, .5);
+      }
+      .mobile-btm-nav {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          display: block;
+          animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+      }
+      .FORM {
+          padding: 50px;
+          display: flex;
+          align-items: center;
+      }
+      .outro-overlay {
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+      }
+      .outro-overlay > #signedUp-illustration {
+          height: auto;
+          z-index: 2; 
+      }
+      .outro-overlay > .shape {
+          display: none;
+      }
+      .outro-overlay > .outro-greeting {
+          font-size: 20px;
+          order: 1;
+      }
+  }
+  .mobile-btm-nav {
+      text-decoration: none;
+      display: none;
+  }
+  .mobile-btm-nav > img {
+      transform: scale(.3) rotateZ(180deg);
+  }
+  input:focus ~ .SPAN,
+  input:valid ~ .SPAN{
+      font-size: 10px;
+      transform: translateX(4px) translateY(-7px);
+      font-size: 0.80em;
+      padding: 0 6px;
+      color: var(--cyny-green);
+      background-color: var(--dusky-green);
+      color: white;
+      border-radius: 2px;
+  }
+  input:focus,
+  input:focus-visible {
+      border: 1px solid  var(--green);
+      box-shadow: 0 0 5px rgb(0,0,0,.3);
+      outline: none;
+  }
+  input:valid {
+      border: 1px solid var(--green);  
+  }
+  .form-container {
+      width: 50vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      padding: 50px;
+      color: var(--form-txt);
+  }
+  .form-header {
+      grid-column: 1 / -1;
+      letter-spacing: .06em;
+      margin-bottom: 30px;
+      font-size: 40px;
+      color: --green ;
+  }
+  input {
+      display: block;
+      border-radius: 4px;
+      border: 0;
+      border-bottom: 1px solid rgb(0,0,0,.4);
+      padding: 6px 6px 6px 10px;
+      margin-top: 5px;
+      background-color: rgba(255, 255, 255, 0);
+      transition: all .5s ease-in;
+      color: var(--opac-white);
+  } 
+  input::placeholder{
+      content: none;
+  }
+  .SPAN {
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      font-size: 15px;
+      transition: all .4s;
+  }
+  [type="submit"]{
+      border: 0;
+      background-color: var(--dusky-green);
+      color: white;
+      padding: 10px 50px;
+      letter-spacing: .05em;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 17px;
+      outline: none;
+  }
+  .FORM {
+      width: auto;
+      display: grid;
+      place-items: center;
+  }
+  .btm-text {
+      margin-top: 15px;
+      font-size: 14px;
+  }
+  .btm-text-highlighted {
+      color: var(--dusky-green);
+  }
+  .input-container {
+      position: relative;
+  }
+  .SPAN:not(.btm-text-highlighted) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 10px;
+      pointer-events: none;
+  }
+  .card-container {
+      display: grid;
+      grid-template-columns: calc(100% - 60%) auto;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background-color: var(--darky);
+  }
+  @media only screen and (max-width: 907px) {
+     
+      /* 
+          For mobile phones: 
+      */
+      .App2 {
+          width: 100%;
+          overflow: visible;
+      }
+      .image-container > [class] {
+          transform: scale(1);
+      }
+      .quote {
+          margin-top: -50px;
+      }
+      .card-container {
+          grid-template-rows: 100vh minmax(100vh, auto);
+          grid-template-columns: none;
+          overflow: hidden;
+          height: auto;
+      }
+      .image-container {
+          width: 100%;
+          position: relative;
+      }
+      .image-container > img {
+          width: calc(110%);
+      }
+      .error {
+          font-size: 13px;
+      }
+      .form-container {
+          display: grid;
+          place-items: center ;
+          grid-template-columns: none;
+          grid-template-rows: none;
+          gap: 20px;
+          width: 100%;
+          gap: 45px;
+          padding: 0;
+          color: rgba(255, 255, 255, .5);
+      }
+      .mobile-btm-nav {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          display: block;
+          animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+      }
+      .FORM {
+          padding: 50px;
+          display: flex;
+          align-items: center;
+      }
+      .outro-overlay {
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+      }
+      .outro-overlay > #signedUp-illustration {
+          height: auto;
+          z-index: 2; 
+      }
+      .outro-overlay > .shape {
+          display: none;
+      }
+      .outro-overlay > .outro-greeting {
+          font-size: 20px;
+          order: 1;
+      }
+  }:root {
+  --red-rgb: 222 249 196;
+  --blue-rgb: 156 219 166;
+  --green-rgb: 80 180 152;
+  --yellow-rgb: 70 133 133;
+  
+  --background-rgb: 204 213 174;
 }
-.head2{
-    margin-left: 30%;
-    font-family: sans-serif;
-    margin-top: 3%;
+:root {
+    --green: rgb(222 ,249 ,196);
+    --red: rgb(156 ,219, 166);
+    --dusky-green:  rgb(156 ,219, 166);;
+    --opac-white:rgb(222 ,249 ,196, .8);
+    --form-txt:  rgba(70 ,133, 133, .5);
+    --darky: #1d2b3a;
+    --light-grey:  204 213 174;
+}
+.App2 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(var(--background-rgb));
+  overflow: hidden;
+  perspective: 2000px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 140rem;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-rows: repeat(40, 1fr);
+  grid-template-columns: repeat(40, 1fr);
+  position: absolute;
+  transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
+}
+
+#container:after,
+#container:before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  pointer-events: none;
+}
+
+#container:before {
+  z-index: 2;
+  background-image: url("https://assets.codepen.io/1468070/plus-pattern-center.png");
+  background-size: 5%;
+  background-repeat: repeat;
+  opacity: 0.25;
+}
+
+#container:after {
+  z-index: 3;
+  background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
+}
+
+.tile {  
+  border: 1px solid rgb(255 255 255 / 25%);
+  transition: background-color 1500ms;
+}
+
+.tile:hover {
+  transition-duration: 0ms;
+}
+
+.tile:nth-child(4n):hover {
+  background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(4n + 1):hover {
+  background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(4n + 2):hover {
+  background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(4n + 3):hover {
+  background-color: rgb(var(--yellow-rgb));
+}
+
+.tile:nth-child(7n):hover {
+  background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(7n + 3):hover {
+  background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(7n + 5):hover {
+  background-color: rgb(var(--yellow-rgb));
+}
+
+.tile:nth-child(7n + 6):hover {
+  background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(11n + 1):hover {
+  background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(11n + 4):hover {
+  background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(11n + 7):hover {
+  background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(11n + 10):hover {
+  background-color: rgb(var(--yellow-rgb));
+}
+
+#SignupWrapper{
+  z-index : 0;
+  width : fit-content ;
+  height : fit-content;
+  background: rgba(254, 250, 224, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(254, 250, 224, 0.38);
+  border-radius  : 1.75rem  ;
+}
+@media only screen and (max-width: 540px) {
+   
+    /* 
+        For mobile phones: 
+    */
+    .App2 {
+        width: 100%;
+        overflow: visible;
+    }
+    .image-container > [class] {
+        transform: scale(1);
+    }
+    .quote {
+        margin-top: -50px;
+    }
+    .card-container {
+        grid-template-rows: 100vh minmax(100vh, auto);
+        grid-template-columns: none;
+        overflow: hidden;
+        height: auto;
+    }
+    .image-container {
+        width: 100%;
+        position: relative;
+    }
+    .image-container > img {
+        width: calc(110%);
+    }
+    .error {
+        font-size: 13px;
+    }
+    .form-container {
+        display: grid;
+        place-items: center ;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 20px;
+        width: 100%;
+        gap: 45px;
+        padding: 0;
+        color: rgba(255, 255, 255, .5);
+    }
+    .mobile-btm-nav {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+    }
+    .FORM {
+        padding: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .outro-overlay {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+    .outro-overlay > #signedUp-illustration {
+        height: auto;
+        z-index: 2; 
+    }
+    .outro-overlay > .shape {
+        display: none;
+    }
+    .outro-overlay > .outro-greeting {
+        font-size: 20px;
+        order: 1;
+    }
+}
+.mobile-btm-nav {
+    text-decoration: none;
+    display: none;
+}
+.mobile-btm-nav > img {
+    transform: scale(.3) rotateZ(180deg);
+}
+input:focus ~ .SPAN,
+input:valid ~ .SPAN{
+    font-size: 10px;
+    transform: translateX(4px) translateY(-7px);
+    font-size: 0.80em;
+    padding: 0 6px;
+    color: var(--cyny-green);
+    background-color: var(--dusky-green);
+    color: white;
+    border-radius: 2px;
+}
+input:focus,
+input:focus-visible {
+    border: 1px solid  var(--green);
+    box-shadow: 0 0 5px rgb(0,0,0,.3);
+    outline: none;
+}
+input:valid {
+    border: 1px solid var(--green);  
+}
+.form-container {
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    padding: 50px;
+    color: var(--form-txt);
+}
+.form-header {
+    grid-column: 1 / -1;
+    letter-spacing: .06em;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: --green ;
+}
+input {
+    display: block;
+    border-radius: 4px;
+    border: 0;
+    border-bottom: 1px solid rgb(0,0,0,.4);
+    padding: 6px 6px 6px 10px;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .5s ease-in;
+    color: var(--opac-white);
+} 
+input::placeholder{
+    content: none;
+}
+.SPAN {
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all .4s;
+}
+[type="submit"]{
+    border: 0;
+    background-color: var(--dusky-green);
+    color: white;
+    padding: 10px 50px;
+    letter-spacing: .05em;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 17px;
+    outline: none;
+}
+.FORM {
+    width: auto;
+    display: grid;
+    place-items: center;
+}
+.btm-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+.btm-text-highlighted {
+    color: var(--dusky-green);
+}
+.input-container {
+    position: relative;
+}
+.SPAN:not(.btm-text-highlighted) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    pointer-events: none;
+}
+.card-container {
+    display: grid;
+    grid-template-columns: calc(100% - 60%) auto;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--darky);
+}
+@media only screen and (max-width: 907px) {
+   
+    /* 
+        For mobile phones: 
+    */
+    .App2 {
+        width: 100%;
+        overflow: visible;
+    }
+    .image-container > [class] {
+        transform: scale(1);
+    }
+    .quote {
+        margin-top: -50px;
+    }
+    .card-container {
+        grid-template-rows: 100vh minmax(100vh, auto);
+        grid-template-columns: none;
+        overflow: hidden;
+        height: auto;
+    }
+    .image-container {
+        width: 100%;
+        position: relative;
+    }
+    .image-container > img {
+        width: calc(110%);
+    }
+    .error {
+        font-size: 13px;
+    }
+    .form-container {
+        display: grid;
+        place-items: center ;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 20px;
+        width: 100%;
+        gap: 45px;
+        padding: 0;
+        color: rgba(255, 255, 255, .5);
+    }
+    .mobile-btm-nav {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+    }
+    .FORM {
+        padding: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .outro-overlay {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+    .outro-overlay > #signedUp-illustration {
+        height: auto;
+        z-index: 2; 
+    }
+    .outro-overlay > .shape {
+        display: none;
+    }
+    .outro-overlay > .outro-greeting {
+        font-size: 20px;
+        order: 1;
+    }
 }
