@@ -53,3 +53,32 @@
     }
 }
 
+@media (max-width: 768px) {
+    .wrapperAbout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left:0;
+        height: 800px;
+    }
+
+    .percentage {
+        margin-top: 40px !important;
+    }
+
+    .test {
+        margin-left:0 !important;
+        height: 400px;
+    }
+
+    #stickyDiv {
+        top: 0;
+    }
+
+    .wrapperAbout .land {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        margin: 0;
+    }
+}

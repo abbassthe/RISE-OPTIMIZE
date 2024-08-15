@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+#textSection {
+  height: 100%
+}
+
 .Banner{
 position: relative;
 background-color:#DEF9C4;
@@ -132,10 +136,10 @@ color: #50B498;
     .u-section-1 .u-sheet-1 {
       min-height: 562px;
     }
-
-    .u-section-1 .u-text-3 {
-      margin-right: 444px;
-    }
+    //
+    //.u-section-1 .u-text-3 {
+    //  margin-right: 444px;
+    //}
   }
 
   @media (max-width: 991px) {
@@ -163,6 +167,22 @@ color: #50B498;
 
     .u-section-1 .u-text-3 {
       margin-right: 44px;
+    }
+
+    #carousel_500f{
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      align-items: baseline;
+      justify-content: center;
+      margin-left: 0%;
+      color: #50B498;
+    }
+    .Banner{
+      height: 50vh;
+    }
+    .clouds {
+      margin-top: 20px;
     }
   }
 

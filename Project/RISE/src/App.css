@@ -15,7 +15,6 @@
   .t{
     height: 360vh;
     width: 100vw;
-
   }
   #txt1
   {
@@ -45,3 +44,97 @@
     color: #468585;
 
   }
+
+.app-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#root {
+  width: 100%
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section {
+  width: 100%;
+}
+
+.wrap {
+  width: 100%;
+}
+
+.t {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-container {
+  flex: 1;
+  min-width: 200px;
+}
+
+.testWrap {
+  flex: 1;
+  min-width: 200px;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-section {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .t {
+    flex-direction: column;
+    height: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .testWrap{
+    height: 400px;
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  #txt1
+  {
+    position:absolute;
+    margin-top: 10%;
+    margin-left: -40%;
+    font-size: 2rem;
+  }
+  #txt2
+  {
+    position:absolute;
+    margin-top: 75%;
+    margin-left: 45%;
+    font-size: 2rem;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0 10px;
+  }
+
+  .contact-section {
+    margin-top: 1rem;
+  }
+}

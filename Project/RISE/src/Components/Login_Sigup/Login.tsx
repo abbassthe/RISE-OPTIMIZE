@@ -8,7 +8,7 @@ function Login() {
       </div>
       <div className="wrapperLogin">
         <h1 id="head">Login</h1>
-        <div className="text">Email</div>
+        <div className="text2">Email</div>
         <div className="Input">
           <img src=".\email.png" alt="" />
           <div id="line"></div>
@@ -20,9 +20,11 @@ function Login() {
           <div id="line"></div>
           <input type="password" />
         </div>
-        <span id="forgotpassword">
-          <a href="#">Forgot Password</a>
-        </span>
+        <div>
+          <span id="forgotpassword">
+            <a href="#">Forgot Password</a>
+          </span>
+        </div>
         <button>Log In</button>
         <div className="segment">
           <div className="lineHorizontal"></div>
