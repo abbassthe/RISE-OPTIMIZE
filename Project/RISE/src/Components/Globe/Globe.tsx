@@ -22,17 +22,7 @@ function Globe() {
           incididunt ut.
         </span>
       </div>
-      <div
-        id="scene-container"
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingLeft: "70%",
-        }}
-      ></div>
+      <div id="scene-container"></div>
     </section>
   );
 }

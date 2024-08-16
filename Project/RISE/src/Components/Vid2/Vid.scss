@@ -1,6 +1,6 @@
 .spacer {
-    height: 100px; // Adjust the height to the desired white space
-    background-color: white; // Ensure the background color is white
+    height: 100px;
+    background-color: white;
   }
 #video{
     display: flex;
@@ -53,5 +53,21 @@
     justify-content: center;
     font-size: clamp(2rem, 10cqi, 10rem);
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .spacer {
+        height: 0;
+    }
+
+    #video {
+        height: 300px;
+    }
+    .video__sticky {
+        height: 100%;
+    }
+    .video__sticky > video {
+        transform: scale(0.8) !important;
+    }
 }
 

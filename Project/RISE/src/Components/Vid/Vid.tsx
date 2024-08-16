@@ -5,11 +5,14 @@ import { useEffect, useState } from "react";
 function Vid() {
   const { scrollY } = useScroll();
   const spacerHeight = 4000;
-  const scale = useTransform(
-    scrollY,
-    [spacerHeight, spacerHeight + window.innerHeight],
-    [0.2, 1]
-  );
+  const scale =
+    window.innerHeight > 768
+      ? useTransform(
+          scrollY,
+          [spacerHeight, spacerHeight + window.innerHeight],
+          [0.2, 1]
+        )
+      : 1;
   const textTrans = useTransform(
     scrollY,
     [spacerHeight, spacerHeight + window.innerHeight],

@@ -16,7 +16,7 @@
       --light-grey:  204 213 174;
   }
   .App2 {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -126,77 +126,75 @@
     border: 1px solid rgba(254, 250, 224, 0.38);
     border-radius  : 1.75rem  ;
   }
-  @media only screen and (max-width: 540px) {
-     
-      /* 
-          For mobile phones: 
-      */
-      .App2 {
-          width: 100%;
-          overflow: visible;
-      }
-      .image-container > [class] {
-          transform: scale(1);
-      }
-      .quote {
-          margin-top: -50px;
-      }
-      .card-container {
-          grid-template-rows: 100vh minmax(100vh, auto);
-          grid-template-columns: none;
-          overflow: hidden;
-          height: auto;
-      }
-      .image-container {
-          width: 100%;
-          position: relative;
-      }
-      .image-container > img {
-          width: calc(110%);
-      }
-      .error {
-          font-size: 13px;
-      }
-      .form-container {
-          display: grid;
-          place-items: center ;
-          grid-template-columns: none;
-          grid-template-rows: none;
-          gap: 20px;
-          width: 100%;
-          gap: 45px;
-          padding: 0;
-          color: rgba(255, 255, 255, .5);
-      }
-      .mobile-btm-nav {
-          display: block;
-          position: absolute;
-          bottom: 0;
-          display: block;
-          animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-      }
-      .FORM {
-          padding: 50px;
-          display: flex;
-          align-items: center;
-      }
-      .outro-overlay {
-          flex-direction: column;
-          justify-content: center;
-          gap: 30px;
-      }
-      .outro-overlay > #signedUp-illustration {
-          height: auto;
-          z-index: 2; 
-      }
-      .outro-overlay > .shape {
-          display: none;
-      }
-      .outro-overlay > .outro-greeting {
-          font-size: 20px;
-          order: 1;
-      }
-  }
+  //@media only screen and (max-width: 540px) {
+  //
+  //    /*
+  //        For mobile phones:
+  //    */
+  //    .App2 {
+  //        width: 100%;
+  //        overflow: visible;
+  //    }
+  //    .image-container > [class] {
+  //        transform: scale(1);
+  //    }
+  //    .quote {
+  //        margin-top: -50px;
+  //    }
+  //    .card-container {
+  //        grid-template-rows: 100vh minmax(100vh, auto);
+  //        grid-template-columns: none;
+  //        overflow: hidden;
+  //        height: auto;
+  //    }
+  //    .image-container {
+  //        width: 100%;
+  //        position: relative;
+  //    }
+  //    .image-container > img {
+  //        width: calc(110%);
+  //    }
+  //    .error {
+  //        font-size: 13px;
+  //    }
+  //    .form-container {
+  //        display: grid;
+  //        place-items: center ;
+  //        grid-template-columns: none;
+  //        grid-template-rows: none;
+  //        gap: 20px;
+  //        width: 100%;
+  //        padding: 0;
+  //    }
+  //    .mobile-btm-nav {
+  //        display: block;
+  //        position: absolute;
+  //        bottom: 0;
+  //        display: block;
+  //        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+  //    }
+  //    .FORM {
+  //        padding: 50px;
+  //        display: flex;
+  //        align-items: center;
+  //    }
+  //    .outro-overlay {
+  //        flex-direction: column;
+  //        justify-content: center;
+  //        gap: 30px;
+  //    }
+  //    .outro-overlay > #signedUp-illustration {
+  //        height: auto;
+  //        z-index: 2;
+  //    }
+  //    .outro-overlay > .shape {
+  //        display: none;
+  //    }
+  //    .outro-overlay > .outro-greeting {
+  //        font-size: 20px;
+  //        order: 1;
+  //    }
+  //}
   .mobile-btm-nav {
       text-decoration: none;
       display: none;
@@ -300,84 +298,83 @@
       overflow: hidden;
       background-color: var(--darky);
   }
-  @media only screen and (max-width: 907px) {
-     
-      /* 
-          For mobile phones: 
-      */
-      .App2 {
-          width: 100%;
-          overflow: visible;
-      }
-      .image-container > [class] {
-          transform: scale(1);
-      }
-      .quote {
-          margin-top: -50px;
-      }
-      .card-container {
-          grid-template-rows: 100vh minmax(100vh, auto);
-          grid-template-columns: none;
-          overflow: hidden;
-          height: auto;
-      }
-      .image-container {
-          width: 100%;
-          position: relative;
-      }
-      .image-container > img {
-          width: calc(110%);
-      }
-      .error {
-          font-size: 13px;
-      }
-      .form-container {
-          display: grid;
-          place-items: center ;
-          grid-template-columns: none;
-          grid-template-rows: none;
-          gap: 20px;
-          width: 100%;
-          gap: 45px;
-          padding: 0;
-          color: rgba(255, 255, 255, .5);
-      }
-      .mobile-btm-nav {
-          display: block;
-          position: absolute;
-          bottom: 0;
-          display: block;
-          animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-      }
-      .FORM {
-          padding: 50px;
-          display: flex;
-          align-items: center;
-      }
-      .outro-overlay {
-          flex-direction: column;
-          justify-content: center;
-          gap: 30px;
-      }
-      .outro-overlay > #signedUp-illustration {
-          height: auto;
-          z-index: 2; 
-      }
-      .outro-overlay > .shape {
-          display: none;
-      }
-      .outro-overlay > .outro-greeting {
-          font-size: 20px;
-          order: 1;
-      }
-  }:root {
-  --red-rgb: 222 249 196;
-  --blue-rgb: 156 219 166;
-  --green-rgb: 80 180 152;
-  --yellow-rgb: 70 133 133;
-  
-  --background-rgb: 204 213 174;
-}
+  //@media only screen and (max-width: 907px) {
+  //
+  //    /*
+  //        For mobile phones:
+  //    */
+  //    .App2 {
+  //        width: 100%;
+  //        overflow: visible;
+  //    }
+  //    .image-container > [class] {
+  //        transform: scale(1);
+  //    }
+  //    .quote {
+  //        margin-top: -50px;
+  //    }
+  //    .card-container {
+  //        grid-template-rows: 100vh minmax(100vh, auto);
+  //        grid-template-columns: none;
+  //        overflow: hidden;
+  //        height: auto;
+  //    }
+  //    .image-container {
+  //        width: 100%;
+  //        position: relative;
+  //    }
+  //    .image-container > img {
+  //        width: calc(110%);
+  //    }
+  //    .error {
+  //        font-size: 13px;
+  //    }
+  //    .form-container {
+  //        display: grid;
+  //        place-items: center ;
+  //        grid-template-columns: none;
+  //        grid-template-rows: none;
+  //        gap: 20px;
+  //        width: 100%;
+  //        gap: 45px;
+  //        padding: 0;
+  //    }
+  //    .mobile-btm-nav {
+  //        display: block;
+  //        position: absolute;
+  //        bottom: 0;
+  //        display: block;
+  //        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+  //    }
+  //    .FORM {
+  //        padding: 50px;
+  //        display: flex;
+  //        align-items: center;
+  //    }
+  //    .outro-overlay {
+  //        flex-direction: column;
+  //        justify-content: center;
+  //        gap: 30px;
+  //    }
+  //    .outro-overlay > #signedUp-illustration {
+  //        height: auto;
+  //        z-index: 2;
+  //    }
+  //    .outro-overlay > .shape {
+  //        display: none;
+  //    }
+  //    .outro-overlay > .outro-greeting {
+  //        font-size: 20px;
+  //        order: 1;
+  //    }
+  //}:root {
+//  --red-rgb: 222 249 196;
+//  --blue-rgb: 156 219 166;
+//  --green-rgb: 80 180 152;
+//  --yellow-rgb: 70 133 133;
+//
+//  --background-rgb: 204 213 174;
+//}
 :root {
     --green: rgb(222 ,249 ,196);
     --red: rgb(156 ,219, 166);
@@ -388,7 +385,7 @@
     --light-grey:  204 213 174;
 }
 .App2 {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -504,77 +501,77 @@
   border: 1px solid rgba(254, 250, 224, 0.38);
   border-radius  : 1.75rem  ;
 }
-@media only screen and (max-width: 540px) {
-   
-    /* 
-        For mobile phones: 
-    */
-    .App2 {
-        width: 100%;
-        overflow: visible;
-    }
-    .image-container > [class] {
-        transform: scale(1);
-    }
-    .quote {
-        margin-top: -50px;
-    }
-    .card-container {
-        grid-template-rows: 100vh minmax(100vh, auto);
-        grid-template-columns: none;
-        overflow: hidden;
-        height: auto;
-    }
-    .image-container {
-        width: 100%;
-        position: relative;
-    }
-    .image-container > img {
-        width: calc(110%);
-    }
-    .error {
-        font-size: 13px;
-    }
-    .form-container {
-        display: grid;
-        place-items: center ;
-        grid-template-columns: none;
-        grid-template-rows: none;
-        gap: 20px;
-        width: 100%;
-        gap: 45px;
-        padding: 0;
-        color: rgba(255, 255, 255, .5);
-    }
-    .mobile-btm-nav {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        display: block;
-        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-    }
-    .FORM {
-        padding: 50px;
-        display: flex;
-        align-items: center;
-    }
-    .outro-overlay {
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-    }
-    .outro-overlay > #signedUp-illustration {
-        height: auto;
-        z-index: 2; 
-    }
-    .outro-overlay > .shape {
-        display: none;
-    }
-    .outro-overlay > .outro-greeting {
-        font-size: 20px;
-        order: 1;
-    }
-}
+//@media only screen and (max-width: 540px) {
+//
+//    /*
+//        For mobile phones:
+//    */
+//    .App2 {
+//        width: 100%;
+//        overflow: visible;
+//    }
+//    .image-container > [class] {
+//        transform: scale(1);
+//    }
+//    .quote {
+//        margin-top: -50px;
+//    }
+//    .card-container {
+//        grid-template-rows: 100vh minmax(100vh, auto);
+//        grid-template-columns: none;
+//        overflow: hidden;
+//        height: auto;
+//    }
+//    .image-container {
+//        width: 100%;
+//        position: relative;
+//    }
+//    .image-container > img {
+//        width: calc(110%);
+//    }
+//    .error {
+//        font-size: 13px;
+//    }
+//    .form-container {
+//        display: grid;
+//        place-items: center ;
+//        grid-template-columns: none;
+//        grid-template-rows: none;
+//        gap: 20px;
+//        width: 100%;
+//        gap: 45px;
+//        padding: 0;
+//        color: rgba(255, 255, 255, .5);
+//    }
+//    .mobile-btm-nav {
+//        display: block;
+//        position: absolute;
+//        bottom: 0;
+//        display: block;
+//        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+//    }
+//    .FORM {
+//        padding: 50px;
+//        display: flex;
+//        align-items: center;
+//    }
+//    .outro-overlay {
+//        flex-direction: column;
+//        justify-content: center;
+//        gap: 30px;
+//    }
+//    .outro-overlay > #signedUp-illustration {
+//        height: auto;
+//        z-index: 2;
+//    }
+//    .outro-overlay > .shape {
+//        display: none;
+//    }
+//    .outro-overlay > .outro-greeting {
+//        font-size: 20px;
+//        order: 1;
+//    }
+//}
 .mobile-btm-nav {
     text-decoration: none;
     display: none;
@@ -678,74 +675,92 @@ input::placeholder{
     overflow: hidden;
     background-color: var(--darky);
 }
-@media only screen and (max-width: 907px) {
-   
-    /* 
-        For mobile phones: 
-    */
-    .App2 {
-        width: 100%;
-        overflow: visible;
-    }
-    .image-container > [class] {
-        transform: scale(1);
-    }
-    .quote {
-        margin-top: -50px;
-    }
-    .card-container {
-        grid-template-rows: 100vh minmax(100vh, auto);
-        grid-template-columns: none;
-        overflow: hidden;
-        height: auto;
-    }
-    .image-container {
-        width: 100%;
-        position: relative;
-    }
-    .image-container > img {
-        width: calc(110%);
-    }
-    .error {
-        font-size: 13px;
-    }
-    .form-container {
-        display: grid;
-        place-items: center ;
-        grid-template-columns: none;
-        grid-template-rows: none;
-        gap: 20px;
-        width: 100%;
-        gap: 45px;
-        padding: 0;
-        color: rgba(255, 255, 255, .5);
-    }
-    .mobile-btm-nav {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        display: block;
-        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-    }
-    .FORM {
-        padding: 50px;
-        display: flex;
-        align-items: center;
-    }
-    .outro-overlay {
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-    }
-    .outro-overlay > #signedUp-illustration {
-        height: auto;
-        z-index: 2; 
-    }
-    .outro-overlay > .shape {
-        display: none;
-    }
-    .outro-overlay > .outro-greeting {
-        font-size: 20px;
-        order: 1;
-    }
+//@media only screen and (max-width: 907px) {
+//
+//    /*
+//        For mobile phones:
+//    */
+//    .App2 {
+//        width: 100%;
+//        overflow: visible;
+//    }
+//    .image-container > [class] {
+//        transform: scale(1);
+//    }
+//    .quote {
+//        margin-top: -50px;
+//    }
+//    .card-container {
+//        grid-template-rows: 100vh minmax(100vh, auto);
+//        grid-template-columns: none;
+//        overflow: hidden;
+//        height: auto;
+//    }
+//    .image-container {
+//        width: 100%;
+//        position: relative;
+//    }
+//    .image-container > img {
+//        width: calc(110%);
+//    }
+//    .error {
+//        font-size: 13px;
+//    }
+//    .form-container {
+//        display: grid;
+//        place-items: center ;
+//        grid-template-columns: none;
+//        grid-template-rows: none;
+//        gap: 20px;
+//        width: 100%;
+//        gap: 45px;
+//        padding: 0;
+//    }
+//    .mobile-btm-nav {
+//        display: block;
+//        position: absolute;
+//        bottom: 0;
+//        display: block;
+//        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+//    }
+//    .FORM {
+//        padding: 50px;
+//        display: flex;
+//        align-items: center;
+//    }
+//    .outro-overlay {
+//        flex-direction: column;
+//        justify-content: center;
+//        gap: 30px;
+//    }
+//    .outro-overlay > #signedUp-illustration {
+//        height: auto;
+//        z-index: 2;
+//    }
+//    .outro-overlay > .shape {
+//        display: none;
+//    }
+//    .outro-overlay > .outro-greeting {
+//        font-size: 20px;
+//        order: 1;
+//    }
+//}
+
+@media (max-width: 768px) {
+  #SignupWrapper {
+    height: 100%;
+    font-size: 1em;
+    width: 70%;
+  }
+  .form-container {
+    grid-template-columns: 1fr;
+    font-size: 1em;
+  }
+  .input-container {
+    height: 80%;
+  }
+  .input-container > input {
+
+    color: #416887;
+  }
 }

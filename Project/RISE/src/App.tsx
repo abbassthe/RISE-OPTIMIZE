@@ -36,9 +36,7 @@ function App() {
           <Spacer />
           <Vid2 />
           <Scene2 />
-          //
           <Contact />
-
         </section>
       </div>
     </>

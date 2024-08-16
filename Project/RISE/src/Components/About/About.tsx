@@ -28,7 +28,7 @@ function About() {
       <div className="test">
         <div className="percentage">
           {Math.round(scale * 100)}%{" "}
-          <span>of farm land lost to locast each year</span>
+          <span>of farm land lost to locust each year</span>
         </div>
       </div>
       <motion.div
