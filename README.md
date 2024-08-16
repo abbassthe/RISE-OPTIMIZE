@@ -116,8 +116,12 @@ FlutterForecast’s architecture is designed to be scalable and secure, handling
 
 ## Team Contributions
 
-- **Abbas Naim**: UI/UX design, backend development, and data preprocessing.
-- **Nadine Mcheik**: Data collection, preprocessing, and model fine-tuning.
+- **Abbas Naim**: UI/UX design, backend development, Preprocessing for Prithvi, Fine-tuning Prithvi, Logistic regression model
+- **Nadine Mcheik**: Data collection, Preprocessing for Prithvi, and Fine-tuning Prithvi.
 - **Mohammad Awwad**: responsiveness, and market research.
-- **Najla Sadek**: Development of Insect2vect feature and insect species analysis.
+- **Najla Sadek**: Development of Insect2vect feature and insect species analysis:
+     *Data Generation*: Created synthetic data for 16 insect species in a specific region.
+     *Matrix Generation*: Developed an algorithm to capture relationships between insect species.
+     *Model Training*: Used PyTorch to train a model that learns vector representations (embeddings) for each insect species.
+     *Inference and Analysis*: Analyzed the trained model to find similarities between species, with potential applications in biodiversity research and conservation.
 - **Mohammad Raslan**: Authentication system, Backend development and API creation.
