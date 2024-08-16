@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework_gis",
-    "maps",
+    "points",
 ]
 CORES_ALLOWED_ORIGINS = ["http://localhost:5173/"]
 MIDDLEWARE = [

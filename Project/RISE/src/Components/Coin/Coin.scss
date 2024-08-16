@@ -1,0 +1,29 @@
+.CoinWrapper{
+    height: 100vh;
+    width: 100vw;
+    background-color: #50B498;
+
+}
+.CoinVideo{
+    height: 100%;
+    width: 100%;
+
+}
+.CoinTextWrapper{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    color: #9CDBA6;
+}
+.InnerCoinWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+}
+.CoinText{
+    font-size: 5rem;
+    width: 100%;
+}.CoinSubtext{
+    font-size: 2.5rem;
+}

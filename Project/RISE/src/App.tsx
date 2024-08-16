@@ -14,6 +14,7 @@ import Scene2 from "./Components/robo_insect/Scene";
 import { Preload } from "@react-three/drei";
 import Preloader from "./Components/Preloader/Preloader";
 import Spacer from "./Components/Spacer/spacer";
+import Coin from "./Components/Coin/Coin";
 function App() {
   return (
     <>
@@ -34,11 +35,9 @@ function App() {
           <About />
           <About2 />
           <Spacer />
-          <Vid2 />
-          <Scene2 />
-          //
-          <Contact />
+          <Coin />
 
+          <Contact />
         </section>
       </div>
     </>

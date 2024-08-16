@@ -7,7 +7,7 @@ function Sidebar() {
   const [open, setOpen] = useState(false);
   const variants = {
     open: {
-      clipPath: "circle(800px at 50px 50px)",
+      clipPath: "circle(900px at 50px 50px)",
       transition: {
         type: "spring",
         stiffness: 20,
@@ -26,17 +26,17 @@ function Sidebar() {
   const items = [
     { name: "Homepage", path: "/homepage" },
     { name: "Map", path: "/map" },
-    { name: "Education", path: "/education" },
-    { name: "Experience", path: "/experience" },
-    { name: "Competitions", path: "/competitions" },
-    { name: "Contact", path: "/contact" },  
+    { name: "Login", path: "/login" },
+    { name: "SignUp", path: "/signup" },
+    { name: "Insect2vect", path: "/Insect2vect" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
       <motion.div className="bg" variants={variants}>
         <div className="links">
-        {items.map((item) => (
+          {items.map((item) => (
             <NavLink to={item.path} key={item.name}>
               {item.name}
             </NavLink>
@@ -72,7 +72,7 @@ function Sidebar() {
           ></motion.path>
         </svg>
       </button>
-    </motion.div> 
+    </motion.div>
   );
 }
 export default Sidebar;

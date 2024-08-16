@@ -238,7 +238,7 @@ function Map() {
 
   return (
     <div id="ynot">
-      <div id="container">
+      <div id="containerMap">
         {" "}
         <Sidebar /> <div id="map" ref={mapContainer}></div>{" "}
         <div id="c">

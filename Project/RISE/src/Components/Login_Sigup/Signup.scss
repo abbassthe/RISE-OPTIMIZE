@@ -3,7 +3,7 @@
     --blue-rgb: 156 219 166;
     --green-rgb: 80 180 152;
     --yellow-rgb: 70 133 133;
-    
+
     --background-rgb: 204 213 174;
   }
   :root {
@@ -25,13 +25,13 @@
     overflow: hidden;
     perspective: 2000px;
   }
-  
+
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  
+
   #container {
     width: 140rem !important;
     height: 140rem;
@@ -42,7 +42,7 @@
     position: absolute;
     transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
   }
-  
+
   #container:after,
   #container:before {
     content: "";
@@ -50,70 +50,70 @@
     inset: 0px;
     pointer-events: none;
   }
-  
+
 
   #container:after {
     z-index: 3;
     background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
   }
-  
-  .tile {  
+
+  .tile {
     border: 1px solid rgb(255 255 255 / 25%);
     transition: background-color 1500ms;
   }
-  
+
   .tile:hover {
     transition-duration: 0ms;
   }
-  
+
   .tile:nth-child(4n):hover {
     background-color: rgb(var(--red-rgb));
   }
-  
+
   .tile:nth-child(4n + 1):hover {
     background-color: rgb(var(--blue-rgb));
   }
-  
+
   .tile:nth-child(4n + 2):hover {
     background-color: rgb(var(--green-rgb));
   }
-  
+
   .tile:nth-child(4n + 3):hover {
     background-color: rgb(var(--yellow-rgb));
   }
-  
+
   .tile:nth-child(7n):hover {
     background-color: rgb(var(--blue-rgb));
   }
-  
+
   .tile:nth-child(7n + 3):hover {
     background-color: rgb(var(--green-rgb));
   }
-  
+
   .tile:nth-child(7n + 5):hover {
     background-color: rgb(var(--yellow-rgb));
   }
-  
+
   .tile:nth-child(7n + 6):hover {
     background-color: rgb(var(--red-rgb));
   }
-  
+
   .tile:nth-child(11n + 1):hover {
     background-color: rgb(var(--red-rgb));
   }
-  
+
   .tile:nth-child(11n + 4):hover {
     background-color: rgb(var(--blue-rgb));
   }
-  
+
   .tile:nth-child(11n + 7):hover {
     background-color: rgb(var(--green-rgb));
   }
-  
+
   .tile:nth-child(11n + 10):hover {
     background-color: rgb(var(--yellow-rgb));
   }
-  
+
   #SignupWrapper{
     z-index : 0;
     width : fit-content ;
@@ -127,9 +127,9 @@
     border-radius  : 1.75rem  ;
   }
   @media only screen and (max-width: 540px) {
-     
-      /* 
-          For mobile phones: 
+
+      /*
+          For mobile phones:
       */
       .App2 {
           width: 100%;
@@ -187,7 +187,7 @@
       }
       .outro-overlay > #signedUp-illustration {
           height: auto;
-          z-index: 2; 
+          z-index: 2;
       }
       .outro-overlay > .shape {
           display: none;
@@ -204,8 +204,8 @@
   .mobile-btm-nav > img {
       transform: scale(.3) rotateZ(180deg);
   }
-  input:focus ~ .SPAN,
-  input:valid ~ .SPAN{
+  .input:focus ~ .SPAN,
+  .input:valid ~ .SPAN{
       font-size: 10px;
       transform: translateX(4px) translateY(-7px);
       font-size: 0.80em;
@@ -215,14 +215,14 @@
       color: white;
       border-radius: 2px;
   }
-  input:focus,
-  input:focus-visible {
+  .input:focus,
+  .input:focus-visible {
       border: 1px solid  var(--green);
       box-shadow: 0 0 5px rgb(0,0,0,.3);
       outline: none;
   }
-  input:valid {
-      border: 1px solid var(--green);  
+  .input:valid {
+      border: 1px solid var(--green);
   }
   .form-container {
       width: 50vw;
@@ -239,7 +239,7 @@
       font-size: 40px;
       color: --green ;
   }
-  input {
+  .input {
       display: block;
       border-radius: 4px;
       border: 0;
@@ -249,8 +249,8 @@
       background-color: rgba(255, 255, 255, 0);
       transition: all .5s ease-in;
       color: var(--opac-white);
-  } 
-  input::placeholder{
+  }
+  .input::placeholder{
       content: none;
   }
   .SPAN {
@@ -301,9 +301,9 @@
       background-color: var(--darky);
   }
   @media only screen and (max-width: 907px) {
-     
-      /* 
-          For mobile phones: 
+
+      /*
+          For mobile phones:
       */
       .App2 {
           width: 100%;
@@ -361,7 +361,7 @@
       }
       .outro-overlay > #signedUp-illustration {
           height: auto;
-          z-index: 2; 
+          z-index: 2;
       }
       .outro-overlay > .shape {
           display: none;
@@ -375,7 +375,7 @@
   --blue-rgb: 156 219 166;
   --green-rgb: 80 180 152;
   --yellow-rgb: 70 133 133;
-  
+
   --background-rgb: 204 213 174;
 }
 :root {
@@ -435,7 +435,7 @@
   background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
 }
 
-.tile {  
+.tile {
   border: 1px solid rgb(255 255 255 / 25%);
   transition: background-color 1500ms;
 }
@@ -505,9 +505,9 @@
   border-radius  : 1.75rem  ;
 }
 @media only screen and (max-width: 540px) {
-   
-    /* 
-        For mobile phones: 
+
+    /*
+        For mobile phones:
     */
     .App2 {
         width: 100%;
@@ -565,7 +565,7 @@
     }
     .outro-overlay > #signedUp-illustration {
         height: auto;
-        z-index: 2; 
+        z-index: 2;
     }
     .outro-overlay > .shape {
         display: none;
@@ -582,8 +582,8 @@
 .mobile-btm-nav > img {
     transform: scale(.3) rotateZ(180deg);
 }
-input:focus ~ .SPAN,
-input:valid ~ .SPAN{
+.input:focus ~ .SPAN,
+.input:valid ~ .SPAN{
     font-size: 10px;
     transform: translateX(4px) translateY(-7px);
     font-size: 0.80em;
@@ -593,14 +593,14 @@ input:valid ~ .SPAN{
     color: white;
     border-radius: 2px;
 }
-input:focus,
-input:focus-visible {
+.input:focus,
+.input:focus-visible {
     border: 1px solid  var(--green);
     box-shadow: 0 0 5px rgb(0,0,0,.3);
     outline: none;
 }
-input:valid {
-    border: 1px solid var(--green);  
+.input:valid {
+    border: 1px solid var(--green);
 }
 .form-container {
     width: 50vw;
@@ -617,7 +617,7 @@ input:valid {
     font-size: 40px;
     color: --green ;
 }
-input {
+.input {
     display: block;
     border-radius: 4px;
     border: 0;
@@ -627,8 +627,8 @@ input {
     background-color: rgba(255, 255, 255, 0);
     transition: all .5s ease-in;
     color: var(--opac-white);
-} 
-input::placeholder{
+}
+.input::placeholder{
     content: none;
 }
 .SPAN {
@@ -679,9 +679,9 @@ input::placeholder{
     background-color: var(--darky);
 }
 @media only screen and (max-width: 907px) {
-   
-    /* 
-        For mobile phones: 
+
+    /*
+        For mobile phones:
     */
     .App2 {
         width: 100%;
@@ -739,7 +739,7 @@ input::placeholder{
     }
     .outro-overlay > #signedUp-illustration {
         height: auto;
-        z-index: 2; 
+        z-index: 2;
     }
     .outro-overlay > .shape {
         display: none;
