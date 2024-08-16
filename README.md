@@ -118,6 +118,6 @@ FlutterForecast’s architecture is designed to be scalable and secure, handling
 
 - **Abbas Naim**: UI/UX design, backend development, and data preprocessing.
 - **Nadine Mcheik**: Data collection, preprocessing, and model fine-tuning.
-- **Mohammad Awwad**: Authentication system, responsiveness, and market research.
+- **Mohammad Awwad**: responsiveness, and market research.
 - **Najla Sadek**: Development of Insect2vect feature and insect species analysis.
-- **Mohammad Raslan**: Backend development and API creation.
+- **Mohammad Raslan**: Authentication system, Backend development and API creation.
