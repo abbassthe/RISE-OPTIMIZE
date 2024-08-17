@@ -12,7 +12,7 @@ function Home() {
           >
             <div className=" u-sheet-1">
               <h3 className="u-text-1">Let us protecct</h3>
-              <h1 className=" u-text-2">nature</h1>
+              <h1 className="u-text-2">Agriculture</h1>
               <p className="u-text-3">
                 With the help of FlutterForcast we can fight pests using
                 satiltie imagry and machine learning

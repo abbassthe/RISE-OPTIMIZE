@@ -25,8 +25,12 @@ function App() {
           <Home />
           <Globe />
           <div className="t">
-            <span id="txt1">HELLO</span>
-            <span id="txt2">World</span>
+            <span id="txt1" style={{ width: "23%" }}>
+              a female locust can lay up to 100 eggs at a time
+            </span>
+            <span id="txt2" style={{ width: "25%" }}>
+              so locust numbers can increase 8000 fold in 9 months!
+            </span>
             <div className="testWrap">
               <Scene />
             </div>

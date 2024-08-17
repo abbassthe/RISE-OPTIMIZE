@@ -15,7 +15,10 @@ function Loader() {
 
 function Contact() {
   return (
-    <div className="wrapperContact d-flex flex-row justify-content-evenly align-items-center">
+    <div
+      className="wrapperContact d-flex flex-row justify-content-evenly align-items-center"
+      style={{ overflowY: "hidden" }}
+    >
       {/* <div className="section1"> */}
 
       <ContactForm />

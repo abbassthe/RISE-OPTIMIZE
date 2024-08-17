@@ -16,10 +16,10 @@ function Globe() {
   return (
     <section id="wrapperg">
       <div id="text">
-        <h1 id="globe-h1">Lorem ipsum </h1>
+        <h1 id="globe-h1">Locust Movement</h1>
         <span id="lorem">
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut.
+          Locust swarms can move anywhere from 50 to 150km per day and can hence
+          effect and spread to multiple countries and regions
         </span>
       </div>
       <div
@@ -31,6 +31,8 @@ function Globe() {
           alignItems: "center",
           justifyContent: "center",
           paddingLeft: "70%",
+          marginLeft: "10%",
+          marginTop: "15%",
         }}
       ></div>
     </section>
