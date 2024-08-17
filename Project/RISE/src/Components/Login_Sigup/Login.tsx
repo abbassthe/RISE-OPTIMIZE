@@ -1,4 +1,5 @@
 import React, { useState, useEffect, FormEvent, ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./login.scss";
 
@@ -16,17 +17,60 @@ function Login() {
   const [currentUser, setCurrentUser] = useState<boolean | null>(null);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  const navigate = useNavigate();
+  useEffect(() => {
+    const performNavigate = async () => {
+      try {
+        await client.get("/userapi/user")
+          .then(function (res) {
+            setCurrentUser(true)
+            navigate('/homepage');
+          })
+          .catch(function (error) {
+            setCurrentUser(false);
+          });;
 
+      } catch (error) {
+        console.error('Error logging out:', error);
+      }
+    };
+
+    performNavigate();
+  }, [navigate]);
+  /*
   useEffect(() => {
     client.get("/userapi/user")
       .then(function (res) {
-        setCurrentUser(true);
+        const navigate = useNavigate();
+        useEffect(() => {
+          const performNavigate = async () => {
+            try {
+              navigate('/homepage');
+            } catch (error) {
+              console.error('Error not going back out:', error);
+            }
+          };
+
+          performNavigate();
+        }, [navigate]);
+
+        return null;
       })
       .catch(function (error) {
         setCurrentUser(false);
       });
-  }, []);
+  }, []);*/
+  // function submitLogin(e: FormEvent) {
+  //   e.preventDefault();
+  //   client.post("/userapi/login", {
+  //     email: email,
+  //     password: password
+  //   }).then(function (res) {
+  //     setCurrentUser(true);
+  //   });
+  // }
   function submitLogin(e: FormEvent) {
     e.preventDefault();
     client.post("/userapi/login", {
@@ -34,18 +78,57 @@ function Login() {
       password: password
     }).then(function (res) {
       setCurrentUser(true);
+      setErrorMessage(null); // Clear error message on successful login
+      navigate('/homepage');
+      // const navigate = useNavigate();
+      // useEffect(() => {
+      //   const performNavigate = async () => {
+      //     try {
+      //       navigate('/homepage');
+
+      //     } catch (error) {
+      //       console.error('Error logging out:', error);
+      //     }
+      //   };
+      //   performNavigate();
+      // }, [navigate]);
+    }).catch(function (error) {
+      if (error.response.status == 403) {
+        setErrorMessage("You are already logged in!"); // Set error message
+        navigate('/homepage');
+      } else {
+        setErrorMessage(error.response.data.message); // Set error message
+      }
+      // setErrorMessage('Invalid email or password. Please try again.' + error.response.data.message); // Set error message
+
+
     });
   }
 
-  if (currentUser) {
-    return (
-      <div>
-        <div className="center">
-          <h2>You're logged in!</h2>
-        </div>
+  // if (currentUser) {
+  //   const navigate = useNavigate();
+  //   useEffect(() => {
+  //     const performNavigate = async () => {
+  //       try {
+  //         navigate('/homepage');
+  //       } catch (error) {
+  //         console.error('Error not going back out:', error);
+  //       }
+  //     };
+
+  //     performNavigate();
+  //   }, [navigate]);
+
+  //   return null;
+  // }
+  /*
+  return (
+    <div>
+      <div className="center">
+        <h2>You're logged in!</h2>
       </div>
-    );
-  }
+    </div>
+  );*/
 
   return (
     <div className="App">
@@ -53,7 +136,9 @@ function Login() {
         <img src="./Sans titre 134_20240722012851.PNG"></img>
       </div>
       <div className="wrapperLogin">
-        <h1 id="head">Login</h1>
+        <h1 id="head">Login
+          {errorMessage && <div style={{ color: 'red', marginBottom: '0px', fontSize: 23 }}>{errorMessage}</div>}
+        </h1>
         <div className="text2">Email</div>
         <div className="Input">
           <img src=".\email.png" alt="" />
@@ -62,6 +147,7 @@ function Login() {
             value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} ></input>
         </div>
+
         <div className="text2">Password</div>
         <div className="Input">
           <img src=".\password.png" alt="" />
@@ -73,6 +159,7 @@ function Login() {
         <span id="forgotpassword">
           <a href="#">Forgot Password</a>
         </span>
+
         <button onClick={submitLogin}>Log In</button>
         <div className="segment">
           <div className="lineHorizontal"></div>

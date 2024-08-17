@@ -11,12 +11,14 @@ class UserRegister(APIView):
 	permission_classes = (permissions.AllowAny,)
 	def post(self, request):
 		clean_data = custom_validation(request.data)
+		if ((clean_data == "Email is taken, choose another one.") or (clean_data == "Choose another password, min 8 characters" ) or (clean_data == "Username is taken, choose another one.")):
+			return Response({"message": f'{clean_data}'}, status=status.HTTP_400_BAD_REQUEST)
 		serializer = UserRegisterSerializer(data=clean_data)
 		if serializer.is_valid(raise_exception=True):
 			user = serializer.create(clean_data)
 			if user:
 				return Response(serializer.data, status=status.HTTP_201_CREATED)
-		return Response(status=status.HTTP_400_BAD_REQUEST)
+		return Response({"message": f'Unknown error'},status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserLogin(APIView):
@@ -25,14 +27,27 @@ class UserLogin(APIView):
 	##
 	def post(self, request):
 		data = request.data
-		assert validate_email(data)
-		assert validate_password(data)
+		# assert validate_email(data)
+		k = validate_email(data)
+		if (k != 'True'):
+	
+			return Response({"message": f'{k}'}, status=status.HTTP_400_BAD_REQUEST)
+		# assert validate_password(data)
+		k = validate_password(data)
+		if (k != 'True'):
+			return Response({"message": f'{k}'}, status=status.HTTP_400_BAD_REQUEST)
 		serializer = UserLoginSerializer(data=data)
-		if serializer.is_valid(raise_exception=True):
+ 
+		if serializer.is_valid():
 			user = serializer.check_user(data)
-			login(request, user)
-			return Response(serializer.data, status=status.HTTP_200_OK)
-
+			if (user == "User not found"):
+				print(user)
+				return Response({"message": f'Invalid email or password. Please try again.'}, status=status.HTTP_400_BAD_REQUEST)
+			else:
+				login(request, user)
+				return Response(serializer.data, status=status.HTTP_200_OK)
+		else:
+			return Response({"message": f'Invalid email or password. Please try again.'}, status=status.HTTP_400_BAD_REQUEST)
 
 class UserLogout(APIView):
 	permission_classes = (permissions.AllowAny,)

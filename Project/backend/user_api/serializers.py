@@ -9,8 +9,10 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 		model = UserModel
 		fields = '__all__'
 	def create(self, clean_data):
-		user_obj = UserModel.objects.create_user(email=clean_data['email'], password=clean_data['password'])
+		user_obj = UserModel.objects.create_user(email=clean_data['email'], username=clean_data['username'], password=clean_data['password'])
 		user_obj.username = clean_data['username']
+		user_obj.fullname = clean_data['fullname']
+		user_obj.phone = clean_data['phone']
 		user_obj.save()
 		return user_obj
 
@@ -21,10 +23,11 @@ class UserLoginSerializer(serializers.Serializer):
 	def check_user(self, clean_data):
 		user = authenticate(username=clean_data['email'], password=clean_data['password'])
 		if not user:
-			raise ValidationError('user not found')
+			# raise ValidationError('user not found')
+			return 'User not found'
 		return user
 
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = UserModel
-		fields = ('email', 'username')
+		fields = ('email', 'username', 'fullname', 'phone')

@@ -7,6 +7,7 @@ import Map from "./Components/Map/Map.tsx";
 import Login from "./Components/Login_Sigup/Login";
 import Insects from "./Components/Insects/insects"
 import Signup from "./Components/Login_Sigup/Signup.tsx";
+import Logout from "./Components/Logout/Logout.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
@@ -16,7 +17,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/map" element={<Map />} />
         <Route path="/login" element={<Login />} />
         <Route path="/insects" element={<Insects />} />
-        <Route path="/Signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </Router>
   </React.StrictMode>
