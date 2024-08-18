@@ -68,45 +68,41 @@ FlutterForecast’s architecture is designed to be scalable and secure, handling
    ```
 
 2. **Backend Setup**
-   - Create a virtual environment and activate it:
-     ```bash
-     python3 -m venv env
-     source env/bin/activate
-     ```
+   - Install GDAL (https://gdal.org/)
+   - Setup and Install PostgreSQL (https://www.postgresql.org/)
+   - Directly install PostGIS extension (https://postgis.net/documentation/getting_started/)
    - Install the required Python packages:
      ```bash
      pip install -r requirements.txt
      ```
-   - Set up the PostgreSQL database:
-     ```bash
-     createdb flutterforecast
-     ```
-   - Run migrations:
-     ```bash
+   - Navigate to the Project directory, then Project folder
+   - Include the PostgreSQL authentication info in the "settings.py" inside the Project app
+   - Open terminal at that path and run migrations:
      python manage.py migrate
-     ```
-   - Start the Django server:
-     ```bash
+   - Run the django backend server at port 8000 by:
      python manage.py runserver
-     ```
 
 3. **Frontend Setup**
-   - Navigate to the frontend directory:
+   - Navigate to the Project directory inside RISE-OPTIMIZE folder
+   - Enter RISE folder, open a terminal at that path
+   - Install the dependencies:
      ```bash
-     cd frontend
+     npm i
      ```
-   - Install the Node.js dependencies:
+   - After it finishes, run the React server by:
      ```bash
-     npm install
+     npm run dev
      ```
-   - Start the React server:
-     ```bash
-     npm start
-     ```
+   - The react server will run at port 5173
 
 4. **Access the Application**
-   - Open your browser and go to `http://localhost:3000` for the frontend.
+   - Open your browser and go to `http://localhost:5173` for the frontend.
    - Backend APIs are accessible at `http://localhost:8000`.
+## Running Insect2vec
+Note: After running the server, please upload data to the insect2vec model only in .pkl type,
+and in the following name format to avoid errors: maps_XXXX_YY.pkl
+where XXXX is the specific year of the file data (ex: 2024)
+and YY is the specific month of the file  data (ex: 05, referring to May)
 
 ## Future Work
 
