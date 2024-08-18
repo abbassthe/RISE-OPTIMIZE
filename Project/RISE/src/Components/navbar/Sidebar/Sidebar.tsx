@@ -1,10 +1,22 @@
 import { spring } from "framer-motion";
 import { motion } from "framer-motion";
 import "./Sidebar.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+
+import axios from "axios";
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+axios.defaults.withCredentials = true;
+
+const client = axios.create({
+  baseURL: "http://127.0.0.1:8000",
+});
+
 function Sidebar() {
   const [open, setOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState<boolean | null>(null);
   const variants = {
     open: {
       clipPath: "circle(900px at 50px 50px)",
@@ -23,14 +35,36 @@ function Sidebar() {
       },
     },
   };
-  const items = [
-    { name: "Homepage", path: "/homepage" },
-    { name: "Map", path: "/map" },
-    { name: "Login", path: "/login" },
-    { name: "SignUp", path: "/signup" },
-    { name: "Insect2vect", path: "/Insect2vect" },
-    { name: "Contact", path: "/contact" },
-  ];
+  useEffect(() => {
+    client
+      .get("/userapi/user")
+      .then(function (res) {
+        setCurrentUser(true);
+      })
+      .catch(function (error) {
+        setCurrentUser(false);
+      });
+  }, []);
+  let items = [];
+
+  if (currentUser) {
+    // logged in
+    items = [
+      { name: "Homepage", path: "/homepage" },
+      { name: "Map", path: "/map" },
+      { name: "Insect2vect", path: "/Insect2vect" },
+      { name: "Contact", path: "/contact" },
+      { name: "Logout", path: "/logout" },
+    ];
+  } else {
+    // not logged in
+    items = [
+      { name: "Homepage", path: "/homepage" },
+      { name: "Login", path: "/login" },
+      { name: "SignUp", path: "/signup" },
+      { name: "Contact", path: "/contact" },
+    ];
+  }
 
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>

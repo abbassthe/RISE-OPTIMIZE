@@ -18,9 +18,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from rest_framework import routers
+from contact import views
 
+router = routers.DefaultRouter()
+router.register("contactusers", views.UserView, "contact1")
+router.register("contactmsgs", views.MessageView, "contact2")
 urlpatterns = [
     # path("Locust", include("maps.urls")),
+    path("contactapi/", include(router.urls)),
+    path("userapi/", include("user_api.urls")),
+    path("insects/", include("insects.urls")),
     path("admin/", admin.site.urls),
     path("api/", include("points.urls")),
 ]

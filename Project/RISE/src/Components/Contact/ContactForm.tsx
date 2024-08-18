@@ -1,8 +1,20 @@
 import { useState } from "react";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import "./Contact.scss";
 import "./ccontainer.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import axios from "axios";
+
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
+axios.defaults.withCredentials = true;
+
+const client = axios.create({
+  baseURL: "http://127.0.0.1:8000",
+});
+
 type AlertInfo = {
   display: boolean;
   message: string;
@@ -43,6 +55,7 @@ const ContactForm: React.FC = () => {
   // Function called on submit that uses emailjs to send email of valid contact form
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     // Destructure data object
+    let am: number = 0;
     const { name, email, subject, message } = data;
     try {
       // Disable form while processing submission
@@ -55,21 +68,41 @@ const ContactForm: React.FC = () => {
         subject,
         message,
       };
+      axios
+        .get("http://localhost:8000/contactapi/contactusers?search=" + email)
+        .then(function (res) {
+          am = parseInt(res.data[0].id);
+          let msga = { user: am, msg: message };
+          axios.post("http://localhost:8000/contactapi/contactmsgs/", msga);
+        })
+        .catch(function (err) {
+          let user = { name: name, email: email };
+          axios.post("http://localhost:8000/contactapi/contactusers/", user);
+          axios
+            .get(
+              "http://localhost:8000/contactapi/contactusers?search=" + email
+            )
+            .then(function (res) {
+              am = parseInt(res.data[0].id);
+              let msga = { user: am, msg: message };
+              axios.post("http://localhost:8000/contactapi/contactmsgs/", msga);
+            });
+        });
 
       // Use emailjs to email contact form data
-      await emailjs.send(
-        import.meta.env.VITE_SERVICE_ID as string,
-        import.meta.env.VITE_TEMPLATE_ID as string,
-        templateParams,
-        import.meta.env.VITE_PUBLIC_KEY as string
-      );
+      // await emailjs.send(
+      //     import.meta.env.VITE_SERVICE_ID as string,
+      //     import.meta.env.VITE_TEMPLATE_ID as string,
+      //     templateParams,
+      //     import.meta.env.VITE_PUBLIC_KEY as string,
+      // );
 
       // Display success alert
-      toggleAlert("Form submission was successful!", "success");
+      toggleAlert("Thanks for your message!", "success");
     } catch (e) {
       console.error(e);
       // Display error alert
-      toggleAlert("Uh oh. Something went wrong.", "danger");
+      toggleAlert("Something went wrong with the API", "danger");
     } finally {
       // Re-enable form submission
       setDisabled(false);
@@ -91,6 +124,7 @@ const ContactForm: React.FC = () => {
                 noValidate
               >
                 {/* Row 1 of form */}
+
                 <div className="row formRowC">
                   <div className="col-6">
                     <input
@@ -175,6 +209,13 @@ const ContactForm: React.FC = () => {
                     )}
                   </div>
                 </div>
+                <button
+                  className="submit-btnC btn btn-primary "
+                  disabled={disabled}
+                  type="submit"
+                >
+                  Submit
+                </button>
               </form>
             </div>
           </div>
@@ -197,14 +238,6 @@ const ContactForm: React.FC = () => {
           ></button>
         </div>
       )}
-      <button
-        className="submit-btnC btn btn-primary "
-        disabled={disabled}
-        type="submit"
-        style={{ marginLeft: "30%" }}
-      >
-        Submit
-      </button>
     </div>
   );
 };

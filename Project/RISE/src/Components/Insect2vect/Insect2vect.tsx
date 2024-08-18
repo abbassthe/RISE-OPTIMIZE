@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { FileUploader } from "react-drag-drop-files";
 import "./Insect2vect.scss";
 import Background from "three/examples/jsm/renderers/common/Background.js";
-
-const fileTypes = ["JPEG", "PNG", "GIF"];
+const fileTypes = ["PKL"];
 type FileInputType = File | FileList | File[];
-export default function App() {
+export default function insects() {
+  // const [files, setFiles] = useState<File[]>([]);
+  const [message, setMessage] = useState<string>("");
   const [files, setFiles] = useState<File[]>([]);
 
   const handleChange = (newFiles: FileInputType) => {
@@ -22,7 +24,45 @@ export default function App() {
     }
 
     setFiles(fileArray);
+    setMessage("Running");
+    setTimeout(() => {
+      try {
+        handleUpload(fileArray);
+      } catch (error) {}
+    }, 2000);
   };
+  function handleUpload(fileArray: any) {
+    if (!files) return;
+    console.log(fileArray);
+    const formData = new FormData();
+    Array.from(fileArray).forEach((file) => {
+      console.log(file);
+      formData.append("files", file);
+    });
+    console.log(formData);
+    try {
+      let ak = "";
+      axios
+        .post("http://localhost:8000/insects/upload/", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+          setMessage("Success:" + response.data);
+        })
+        .catch((error) => {
+          setMessage("Error:" + error.message);
+          if (error.response) {
+            setMessage("Response error:" + error.response.data);
+          } else if (error.request) {
+            setMessage("Request error:" + error.request);
+          }
+        });
+    } catch (error) {
+      setMessage("Error: " + error);
+    }
+  }
 
   return (
     <div className="AppInsect">
@@ -45,7 +85,12 @@ export default function App() {
             <p>No files uploaded yet</p>
           )}
         </div>
-        <div>Result:</div>
+        <div>
+          Result:{" "}
+          {(message || "").split("\n").map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
+        </div>
       </div>
     </div>
   );
