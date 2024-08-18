@@ -61,12 +61,10 @@ function Sidebar() {
   } else { // not logged in
     items = [
       { name: "Homepage", path: "/homepage" },
-      { name: "Map", path: "/map" },
       { name: "Education", path: "/education" },
       { name: "Experience", path: "/experience" },
       { name: "Competitions", path: "/competitions" },
       { name: "Contact", path: "/contact" },
-      { name: "Insects", path: "/insects" },
       { name: "Login", path: "/login" },
       { name: "Signup", path: "/signup" },
     ];
