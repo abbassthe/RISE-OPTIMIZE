@@ -1,186 +1,203 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 *{
-    margin : 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .Banner{
-position: relative;
-background-color:#DEF9C4;
-width: 100%;
-height: 125vh;
-background-size: cover;
-//background-size: cover; /* or "contain" depending on what you want */
-background-position: center center;
-background-repeat: no-repeat;
-text-align:center;
-margin:auto;
-padding:0;
-box-shadow: 0 0 50px 50px white inset;
+  position: relative;
+  background-color:#DEF9C4;
+  width: 100%;
+  height: 125vh;
+  background-size: cover;
+  //background-size: cover; /* or "contain" depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align:center;
+  margin:auto;
+  padding:0;
+  box-shadow: 0 0 50px 50px white inset;
 }
 body{
-    margin : 0;
-    padding: 0;
+  margin : 0;
+  padding: 0;
 }
 a{
-text-decoration: none;
-color:inherit;
+  text-decoration: none;
+  color:inherit;
 }
 section{
- height : 100vh;
+  height : 100vh;
 }
 #c1{
---i : 1;
+  --i : 1;
 }
 #c2{
-    --i : 2;
+  --i : 2;
 }
 #c3{
---i : 3;
+  --i : 3;
 }
 #c4{
---i : 4;
+  --i : 4;
 }
 #c5{
-    --i : 5;
-    }
+  --i : 5;
+}
 img{
-    position: absolute;
-    bottom: 0;
-    max-width: 100%;
-   z-index : 200;
-   animation: animate calc(10s * var(--i)) linear infinite;
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  z-index : 200;
+  animation: animate calc(10s * var(--i)) linear infinite;
 }
 @keyframes animate {
-    0%
-    {
-        transform: translateX(-100%);
-    }
-    100%
-    {
-        transform: translateX(100%);
-    }
+  0%
+  {
+    transform: translateX(-100%);
+  }
+  100%
+  {
+    transform: translateX(100%);
+  }
 }
 .Banner .clouds{
-position: absolute;
-top :0;
-left: 0;
-width: 100%;
-height: 100%;
-overflow: hidden;
+  position: absolute;
+  top :0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 
 #carousel_500f{
-height: 700px;
-width: 600px;
-margin-top: 10%;
-position: absolute;
-align-items: baseline;
-justify-content: center;
-margin-left: 31%;
-color: #50B498;
+  height: 700px;
+  width: 600px;
+  margin-top: 10%;
+  position: absolute;
+  align-items: baseline;
+  justify-content: center;
+  margin-left: 31%;
+  color: #50B498;
 }
 .u-section-1 .u-sheet-1 {
-    min-height: 682px;
-    font-family: Playfair;
-    text-align: center;
-    margin-top: 10%;
-  }
+  min-height: 682px;
+  font-family: Playfair;
+  text-align: center;
+  margin-top: 10%;
+}
 
-  .u-section-1 .u-text-1 {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 1.5rem;
-    margin: 0px auto 0 0;
-    font-family: Poppins , sans-serif;
-  }
+.u-section-1 .u-text-1 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  margin: 0px auto 0 0;
+  font-family: Poppins , sans-serif;
+  text-align:center;
+}
 
-  .u-section-1 .u-text-2 {
-    text-transform: uppercase;
-    font-size: 7.5rem;
-    font-weight: 700;
-    margin: 0 auto 0 0;
-    font-family: Playfair;
-    margin-bottom: 2%;
-    margin-left: -20%;
+.u-section-1 .u-text-2 {
+  text-transform: uppercase;
+  font-size: 7.5rem;
+  font-weight: 700;
+  margin: 0 auto 0 0;
+  font-family: Playfair;
+  margin-bottom: 2%;
+  margin-left: -20%;
+}
+
+.u-section-1 .u-text-3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  font-weight: 700;
+  font-family: Poppins , sans-serif;
+  margin-bottom: 7%;
+  //margin: 20px 644px 0 0;
+}
+
+.u-section-1 .u-link-1 {
+  border-style: solid;
+  //padding-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  //margin: 0 100px 0;
+  //margin-top: 15%;
+  font-family: Poppins , sans-serif;
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 562px;
   }
 
   .u-section-1 .u-text-3 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.8;
-    font-weight: 700;
-    font-family: Poppins , sans-serif;
-    margin-bottom: 7%;
-    //margin: 20px 644px 0 0;
+    margin-right: 444px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 {
+    background-position: 0% 49.75%;
+    background-size: 135%;
   }
 
-  .u-section-1 .u-link-1 {
-    border-style: solid;
-    //padding-bottom: 2px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    //margin: 0 100px 0;
-    //margin-top: 15%;
-    font-family: Poppins , sans-serif;
+  .u-section-1 .u-sheet-1 {
+    min-height: 430px;
+  }
+  .u-section-1 .u-sheet-3 {
+    margin-right: 30%;
+  }
+  .u-section-1 .u-text-3 {
+    margin-right: 20px;
+
+  }
+}
+
+@media (max-width: 767px) {
+  #carousel_500f {
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
     text-align: center;
   }
-
-  @media (max-width: 1199px) {
-    .u-section-1 .u-sheet-1 {
-      min-height: 562px;
-    }
-
-    .u-section-1 .u-text-3 {
-      margin-right: 444px;
-    }
+  #text-section {
+    height:50vh;
+  }
+  .u-section-1 .u-sheet-1 {
+    min-height: 323px;
   }
 
-  @media (max-width: 991px) {
-     .u-section-1 {
-      background-position: 0% 49.75%;
-      background-size: 135%;
-    }
+  .u-section-1 .u-text-3 {
+    margin-right: 44px;
+  }
+}
 
-    .u-section-1 .u-sheet-1 {
-      min-height: 430px;
-    }
-    .u-section-1 .u-sheet-3 {
-      margin-right: 30%;
-    }
-    .u-section-1 .u-text-3 {
-      margin-right: 20px;
-
-    }
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 203px;
   }
 
-  @media (max-width: 767px) {
-    .u-section-1 .u-sheet-1 {
-      min-height: 323px;
-    }
-
-    .u-section-1 .u-text-3 {
-      margin-right: 44px;
-    }
+  .u-section-1 .u-text-1 {
+    font-size: 1.25rem;
   }
-
-  @media (max-width: 575px) {
-    .u-section-1 .u-sheet-1 {
-      min-height: 203px;
-    }
-
-    .u-section-1 .u-text-1 {
-      font-size: 1.25rem;
-    }
 
     .u-section-1 .u-text-2 {
-      font-size: 4.5rem;
+      width: 100%;
+      margin:0;
+      font-size: 3rem;
+      display:flex;
+      justify-content: center;
+      text-align:center;
     }
 
-    .u-section-1 .u-text-3 {
-      margin-right: 0;
-    }
+  .u-section-1 .u-text-3 {
+    margin-right: 0;
+    font-size: 1rem;
   }
+}
