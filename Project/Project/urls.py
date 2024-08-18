@@ -22,4 +22,5 @@ from django.conf.urls import include
 urlpatterns = [
     # path("Locust", include("maps.urls")),
     path("admin/", admin.site.urls),
+    path("api/", include("points.urls")),
 ]

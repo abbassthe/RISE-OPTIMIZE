@@ -470,7 +470,8 @@ def process_matrix_and_store(matrix, ulx, uly, pixel_size):
 
 
 # Example 2D matrix (using numpy for convenience)
-example_matrix = np.array([[0, 0, 0, 255], [255, 0, 255, 0], [0, 0, 0, 0]])
+example_matrix = np.full((3000, 3000), 255)
+
 
 # Assuming `ulx`, `uly`, and `pixel_size` have been extracted as shown previously
 process_matrix_and_store(example_matrix, ulx, uly, pixel_size)

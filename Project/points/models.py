@@ -8,6 +8,7 @@ from django.contrib.gis.geos import Point
 class Egg(models.Model):
     longitude = models.FloatField()
     latitude = models.FloatField()
+    year = models.IntegerField(default=2030)
     geom = models.PointField()  # PostGIS field for geometry
 
     def save(self, *args, **kwargs):
