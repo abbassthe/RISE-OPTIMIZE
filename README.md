@@ -52,3 +52,10 @@ Note: After running the server, please upload data to the insect2vec model only 
 and in the following name format to avoid errors: maps_XXXX_YY.pkl
 where XXXX is the specific year of the file data (ex: 2024)
 and YY is the specific month of the file  data (ex: 05, referring to May)
+
+## Final pre-trained model
+Unfortunately, uploading large files is not supported by GitHub, we've uploaded the 
+final pre-trained model on the following link: https://drive.google.com/file/d/1-JdBkBZhfofZOBO5ojhyctfc3sVGfDFK/view?usp=sharing
+
+<img width="1383" alt="image" src="https://github.com/user-attachments/assets/32e55bdc-7657-440f-9c4f-4ea72d172b1a">
+
