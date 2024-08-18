@@ -3,7 +3,6 @@ import SignupForm from './SignupForm.tsx';
 import TileGrid from './TileGRid.tsx';
 import './Signup.scss';
 
-
 const Signup: React.FC = () => {
 
 

@@ -27,4 +27,6 @@ urlpatterns = [
     path('contactapi/', include(router.urls)),
     path('userapi/', include('user_api.urls')),
     path('insects/', include('insects.urls')),
+    # path("Locust", include("maps.urls")),
+    path("admin/", admin.site.urls),
 ]

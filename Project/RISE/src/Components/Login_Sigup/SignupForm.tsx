@@ -43,7 +43,7 @@ function SignupForm() {
     performNavigate();
   }, [navigate]);
 
-  function isValid(p) {
+  function isValid(p: any) {
     var phoneRe = /^[\s()+-]*([0-9][\s()+-]*){6,20}$/;
     var digits = p.replace(/\D/g, "");
     return phoneRe.test(digits);
