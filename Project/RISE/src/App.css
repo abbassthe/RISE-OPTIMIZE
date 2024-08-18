@@ -1,140 +1,48 @@
+
 .example::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .example {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  .testWrap{
-    position: sticky;
-    top: 30%;
-    height: 70vh;
-  }
-  .t{
-    height: 360vh;
-    width: 100vw;
-  }
-  #txt1
-  {
-    position:absolute;
-    margin-top: 50%;
-    margin-left: 10%;
-    font-family: Playfair;
-    text-align: center;
-    height: 20px;
-    text-decoration: none;
-    font-size: 3rem;
-
-    color: #468585;
-
-  }
-  #txt2
-  {
-    position:absolute;
-    margin-top: 100%;
-    margin-left: 65%;
-    font-family: Playfair;
-    text-align: center;
-    height: 20px;
-    text-decoration: none;
-    font-size: 3rem;
-
-    color: #468585;
-
-  }
-
-.app-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  display: none;
 }
 
-#root {
-  width: 100%
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.testWrap{
+  position: sticky;
+  top: 30%;
+  height: 70vh;
 }
+.t{
+  height: 360vh;
+  width: 100vw;
 
-section {
-  width: 100%;
 }
+#txt1
+{
+  position:absolute;
+  margin-top: 50%;
+  margin-left: 10%;
+  font-family: Playfair;
+  text-align: center;
+  height: 20px;
+  text-decoration: none;
+  font-size: 3rem;
 
-.wrap {
-  width: 100%;
+  color: #468585;
+
 }
+#txt2
+{
+  position:absolute;
+  margin-top: 100%;
+  margin-left: 65%;
+  font-family: Playfair;
+  text-align: center;
+  height: 20px;
+  text-decoration: none;
+  font-size: 3rem;
 
-.t {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+  color: #468585;
 
-.text-container {
-  flex: 1;
-  min-width: 200px;
-}
-
-.testWrap {
-  flex: 1;
-  min-width: 200px;
-}
-
-.about-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.contact-section {
-  margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-  .t {
-    flex-direction: column;
-    height: 400px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-  .testWrap{
-    height: 400px;
-    width: 100%;
-    margin-top: 10%;
-  }
-
-  #txt1
-  {
-    position:absolute;
-    margin-top: 10%;
-    margin-left: -40%;
-    font-size: 2rem;
-  }
-  #txt2
-  {
-    position:absolute;
-    margin-top: 75%;
-    margin-left: 45%;
-    font-size: 2rem;
-  }
-
-  .about-section {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .app-container {
-    padding: 0 10px;
-  }
-
-  .contact-section {
-    margin-top: 1rem;
-  }
 }
