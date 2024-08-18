@@ -59,3 +59,7 @@ final pre-trained model on the following link: https://drive.google.com/file/d/1
 
 <img width="1383" alt="image" src="https://github.com/user-attachments/assets/32e55bdc-7657-440f-9c4f-4ea72d172b1a">
 
+## Map population (optional)
+The map is currently empty to populate it you can run the script in the tests.py file in the points model after getting a mask from running infrence using the final pretrained model mention above 
+command to run infrence : python model_inference.py -config {config_file_path} -ckpt {path_to_checkpoint} -input {input_tiff_path} -output {output_folder_path} -input_type tif -bands 0 1 2 3 4 5
+
