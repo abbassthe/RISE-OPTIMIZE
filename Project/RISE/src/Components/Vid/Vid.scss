@@ -66,3 +66,18 @@
     color: #73BBA3;
 
 }
+@media (max-width: 768px) {
+    .spacer {
+        height: 0;
+    }
+
+    #video {
+        height: 300px;
+    }
+    .video__sticky {
+        height: 100%;
+    }
+    .video__sticky > video {
+        transform: scale(0.8) !important;
+    }
+}
