@@ -51,22 +51,16 @@ function Sidebar() {
     items = [
       { name: "Homepage", path: "/homepage" },
       { name: "Map", path: "/map" },
-      { name: "Education", path: "/education" },
-      { name: "Experience", path: "/experience" },
-      { name: "Competitions", path: "/competitions" },
+      { name: "Insect2vect", path: "/Insect2vect" },
       { name: "Contact", path: "/contact" },
-      { name: "Insects", path: "/insects" },
       { name: "Logout", path: "/logout" },
     ];
   } else { // not logged in
     items = [
       { name: "Homepage", path: "/homepage" },
-      { name: "Education", path: "/education" },
-      { name: "Experience", path: "/experience" },
-      { name: "Competitions", path: "/competitions" },
-      { name: "Contact", path: "/contact" },
       { name: "Login", path: "/login" },
-      { name: "Signup", path: "/signup" },
+      { name: "SignUp", path: "/signup" },
+      { name: "Contact", path: "/contact" },
     ];
   }
 

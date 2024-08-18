@@ -38,10 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    "django.contrib.gis",
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework",
+    "rest_framework_gis",
     'corsheaders',
-    'rest_framework',
+    "points",
     "contact",
     "insects",
     'user_api.apps.UserApiConfig',
@@ -81,13 +84,24 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "HOST": "localhost",
+        "NAME": "postgres",
+        "PASSWORD": "abbass122",
+        "PORT": 5432,
+        "USER": "postgres",
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 ## USER model
 AUTH_USER_MODEL = 'user_api.AppUser'
@@ -144,7 +158,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
  
-
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173/", "http://localhost:5173/map"]
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:5173',
      'http://127.0.0.1:5173' 
