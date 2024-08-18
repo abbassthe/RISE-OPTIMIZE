@@ -1,0 +1,34 @@
+from matplotlib import pyplot as plt
+import numpy as np
+import rasterio
+
+
+def display_tiff(data=None, tiff_file_path=None, mask=False):
+
+    if tiff_file_path is not None:
+        data = None
+        with rasterio.open(tiff_file_path) as src:
+            if not mask:
+                data = np.array([src.read(3), src.read(2), src.read(1)])
+            else:
+                data = src.read(1)
+    # Read the raster data
+    if not mask:
+        data = np.transpose(data, (1, 2, 0))
+        min_val = np.min(data)
+        max_val = np.max(data)
+
+        # Perform min-max scaling to normalize the array
+        data = (data - min_val) / (max_val - min_val)
+        print(data.shape)
+        # Visualize the data
+        plt.imshow(data)
+        plt.show()
+    else:
+        print(data.shape)
+        # Visualize the data
+        plt.imshow(data, cmap="gray")
+        plt.show()
+
+
+display_tiff(tiff_file_path=r"C:\Users\abbas\Downloads\final_mask.tif", mask=True)
