@@ -159,4 +159,13 @@ CSRF_COOKIE_SECURE = True
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Use database-backed sessions
 SESSION_COOKIE_NAME = 'sessionid'
-SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds 
+SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds
+
+
+#EMAIL
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER ='flutterforecast@gmail.com'
+EMAIL_HOST_PASSWORD ='gjtwxnkrbanebfzn'

@@ -8,6 +8,8 @@ import Login from "./Components/Login_Sigup/Login";
 import Insects from "./Components/Insects/insects"
 import Signup from "./Components/Login_Sigup/Signup.tsx";
 import Logout from "./Components/Logout/Logout.tsx";
+import PasswordReset from './Components/PasswordReset/ResetPassword.tsx'
+import PasswordResetConfirm from './Components/PasswordReset/ResetPasswordConfirm.tsx';
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
@@ -19,6 +21,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/insects" element={<Insects />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/password-reset" element={<PasswordReset />} />
+        <Route path="/password-reset/:encodedPk/:token" element={<PasswordResetConfirm />} />
       </Routes>
     </Router>
   </React.StrictMode>

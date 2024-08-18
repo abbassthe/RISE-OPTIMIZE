@@ -71,38 +71,52 @@ function Login() {
   //     setCurrentUser(true);
   //   });
   // }
+  const validate = () => {
+    if (!email) {
+      return 'A correct form of email is required';
+    }
+    if (!password) {
+      return 'Please write a password';
+    }
+    return "Valid"
+  }
   function submitLogin(e: FormEvent) {
     e.preventDefault();
-    client.post("/userapi/login", {
-      email: email,
-      password: password
-    }).then(function (res) {
-      setCurrentUser(true);
-      setErrorMessage(null); // Clear error message on successful login
-      navigate('/homepage');
-      // const navigate = useNavigate();
-      // useEffect(() => {
-      //   const performNavigate = async () => {
-      //     try {
-      //       navigate('/homepage');
-
-      //     } catch (error) {
-      //       console.error('Error logging out:', error);
-      //     }
-      //   };
-      //   performNavigate();
-      // }, [navigate]);
-    }).catch(function (error) {
-      if (error.response.status == 403) {
-        setErrorMessage("You are already logged in!"); // Set error message
+    if (validate() == "Valid") {
+      client.post("/userapi/login", {
+        email: email,
+        password: password
+      }).then(function (res) {
+        setCurrentUser(true);
+        setErrorMessage(null); // Clear error message on successful login
         navigate('/homepage');
-      } else {
-        setErrorMessage(error.response.data.message); // Set error message
-      }
-      // setErrorMessage('Invalid email or password. Please try again.' + error.response.data.message); // Set error message
+        // const navigate = useNavigate();
+        // useEffect(() => {
+        //   const performNavigate = async () => {
+        //     try {
+        //       navigate('/homepage');
+
+        //     } catch (error) {
+        //       console.error('Error logging out:', error);
+        //     }
+        //   };
+        //   performNavigate();
+        // }, [navigate]);
+      }).catch(function (error) {
+        if (error.response.status == 403) {
+          setErrorMessage("You are already logged in!"); // Set error message
+          navigate('/homepage');
+        } else {
+          setErrorMessage(error.response.data.message); // Set error message
+        }
+        // setErrorMessage('Invalid email or password. Please try again.' + error.response.data.message); // Set error message
 
 
-    });
+      });
+    } else {
+      setErrorMessage(validate())
+    }
+
   }
 
   // if (currentUser) {
@@ -157,7 +171,7 @@ function Login() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} ></input>
         </div>
         <span id="forgotpassword">
-          <a href="#">Forgot Password</a>
+          <a href="password-reset">Forgot Password</a>
         </span>
 
         <button onClick={submitLogin}>Log In</button>

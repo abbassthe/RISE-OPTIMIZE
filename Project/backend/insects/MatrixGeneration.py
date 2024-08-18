@@ -1,5 +1,6 @@
 import pickle as pkl
 import os
+import glob
 def add_month(time, months):
     year, month = time
     month += months
@@ -15,20 +16,52 @@ item_set = set()
 mat = dict()
 maps = dict()
 
-tmp_t = (2023, 1)
-end_t = (2024, 8)
+# tmp_t = (2023, 1)
+# end_t = (2024, 8)
  
 input_dir = os.path.join("insects", 'input_files')
 if not os.path.exists(input_dir):
     os.makedirs(input_dir)
 
-while tmp_t[0] * 12 + tmp_t[1] <= end_t[0] * 12 + end_t[1]:
+
+file_pattern = os.path.join(input_dir, "maps_*.pkl")
+files = glob.glob(file_pattern)
+
+file_info = []
+
+for file_path in files:
+    filename = os.path.basename(file_path)
+    
+    try:
+        # Remove 'maps_' prefix and '.pkl' suffix, then split by '-'
+        base_name = filename.replace("maps_", "").replace(".pkl", "")
+        year, month = base_name.split('-')
+        year = int(year)
+        month = int(month)
+
+        # Add to list for sorting
+        file_info.append((year, month, file_path))
+    except (IndexError, ValueError) as e:
+        print(f"Skipping file {filename} due to error: {e}")
+
+# Sort the file_info list by year and month
+file_info.sort()
+
+# Process the files in sorted order
+for year, month, file_path in file_info:
+    tmp_t = (year, month)
+    
     print("Read data in ({}, {:02d})".format(tmp_t[0], tmp_t[1]))
-    # with open("maps_{}-{:02d}.pkl".format(tmp_t[0], tmp_t[1]), "rb") as f:
-    input_file_path = os.path.join(input_dir, "maps_{}-{:02d}.pkl".format(tmp_t[0], tmp_t[1]))
-    with open(input_file_path, "rb") as f:
+    with open(file_path, "rb") as f:
         maps[tmp_t] = pkl.load(f)
-    tmp_t = add_month(tmp_t, 1)
+
+# while tmp_t[0] * 12 + tmp_t[1] <= end_t[0] * 12 + end_t[1]:
+#     print("Read data in ({}, {:02d})".format(tmp_t[0], tmp_t[1]))
+#     # with open("maps_{}-{:02d}.pkl".format(tmp_t[0], tmp_t[1]), "rb") as f:
+#     input_file_path = os.path.join(input_dir, "maps_{}-{:02d}.pkl".format(tmp_t[0], tmp_t[1]))
+#     with open(input_file_path, "rb") as f:
+#         maps[tmp_t] = pkl.load(f)
+#     tmp_t = add_month(tmp_t, 1)
 
 for t in maps:
     print("t = ({}, {:02d})".format(t[0], t[1]))
