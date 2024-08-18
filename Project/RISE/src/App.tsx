@@ -14,6 +14,7 @@ import Scene2 from "./Components/robo_insect/Scene";
 import { Preload } from "@react-three/drei";
 import Preloader from "./Components/Preloader/Preloader";
 import Spacer from "./Components/Spacer/spacer";
+import Coin from "./Components/Coin/Coin";
 function App() {
   return (
     <>
@@ -24,8 +25,12 @@ function App() {
           <Home />
           <Globe />
           <div className="t">
-            <span id="txt1">HELLO</span>
-            <span id="txt2">World</span>
+            <span id="txt1" style={{ width: "23%" }}>
+              a female locust can lay up to 100 eggs at a time
+            </span>
+            <span id="txt2" style={{ width: "25%" }}>
+              so locust numbers can increase 8000 fold in 9 months!
+            </span>
             <div className="testWrap">
               <Scene />
             </div>
@@ -34,8 +39,8 @@ function App() {
           <About />
           <About2 />
           <Spacer />
-          <Vid2 />
-          <Scene2 />
+          <Coin />
+
           <Contact />
         </section>
       </div>

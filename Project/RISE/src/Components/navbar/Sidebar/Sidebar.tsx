@@ -20,7 +20,7 @@ function Sidebar() {
   const [currentUser, setCurrentUser] = useState<boolean | null>(null);
   const variants = {
     open: {
-      clipPath: "circle(800px at 50px 50px)",
+      clipPath: "circle(900px at 50px 50px)",
       transition: {
         type: "spring",
         stiffness: 20,

@@ -1,6 +1,5 @@
 import "./Vid.scss";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 function Vid() {
   const { scrollY } = useScroll();
@@ -37,7 +36,7 @@ function Vid() {
             muted
             loop
             playsInline
-            src="https://framerusercontent.com/modules/assets/BcIElVBzSD9P1ht5PhehnVyzTA~0iRDOKjSaNyoXJfsXAcSsdeEYSbJ8aAp3MvS5ts7LL0.mp4"
+            src="/Untitled video.mp4"
             style={{ scale }}
           ></motion.video>
           <div className="video__text__overlay">

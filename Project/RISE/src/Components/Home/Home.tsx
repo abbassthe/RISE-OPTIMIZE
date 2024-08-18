@@ -11,11 +11,11 @@ function Home() {
             id="carousel_500f"
           >
             <div className=" u-sheet-1">
-              <h3 className="u-text-1">Let us protect</h3>
-              <h1 className=" u-text-2">nature</h1>
-              <p className="u-text-3 text-center">
-                With the help of FlutterForecast we can fight pests using
-                satellite imagery and machine learning
+              <h3 className="u-text-1">Let us protecct</h3>
+              <h1 className="u-text-2">Agriculture</h1>
+              <p className="u-text-3">
+                With the help of FlutterForcast we can fight pests using
+                satiltie imagry and machine learning
               </p>
             </div>
           </section>

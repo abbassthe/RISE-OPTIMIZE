@@ -1,0 +1,33 @@
+.AppInsect {
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+    background-color: #DEF9C4;
+  }
+  label {
+    width: 350px;
+    box-sizing: border-box;
+  }
+.InsectHeading{
+    margin-bottom: 5%;
+}
+#wrapperInsect{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 60%;
+    margin-right: 27%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+#InsectNames{
+    margin-right: 10%;
+    width: 150%;
+}

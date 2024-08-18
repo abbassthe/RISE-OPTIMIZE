@@ -3,7 +3,7 @@
     --blue-rgb: 156 219 166;
     --green-rgb: 80 180 152;
     --yellow-rgb: 70 133 133;
-    
+
     --background-rgb: 204 213 174;
   }
   :root {
@@ -25,13 +25,13 @@
     overflow: hidden;
     perspective: 2000px;
   }
-  
+
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  
+
   #container {
     width: 140rem !important;
     height: 140rem;
@@ -42,7 +42,7 @@
     position: absolute;
     transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
   }
-  
+
   #container:after,
   #container:before {
     content: "";
@@ -50,70 +50,70 @@
     inset: 0px;
     pointer-events: none;
   }
-  
+
 
   #container:after {
     z-index: 3;
     background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
   }
-  
-  .tile {  
+
+  .tile {
     border: 1px solid rgb(255 255 255 / 25%);
     transition: background-color 1500ms;
   }
-  
+
   .tile:hover {
     transition-duration: 0ms;
   }
-  
+
   .tile:nth-child(4n):hover {
     background-color: rgb(var(--red-rgb));
   }
-  
+
   .tile:nth-child(4n + 1):hover {
     background-color: rgb(var(--blue-rgb));
   }
-  
+
   .tile:nth-child(4n + 2):hover {
     background-color: rgb(var(--green-rgb));
   }
-  
+
   .tile:nth-child(4n + 3):hover {
     background-color: rgb(var(--yellow-rgb));
   }
-  
+
   .tile:nth-child(7n):hover {
     background-color: rgb(var(--blue-rgb));
   }
-  
+
   .tile:nth-child(7n + 3):hover {
     background-color: rgb(var(--green-rgb));
   }
-  
+
   .tile:nth-child(7n + 5):hover {
     background-color: rgb(var(--yellow-rgb));
   }
-  
+
   .tile:nth-child(7n + 6):hover {
     background-color: rgb(var(--red-rgb));
   }
-  
+
   .tile:nth-child(11n + 1):hover {
     background-color: rgb(var(--red-rgb));
   }
-  
+
   .tile:nth-child(11n + 4):hover {
     background-color: rgb(var(--blue-rgb));
   }
-  
+
   .tile:nth-child(11n + 7):hover {
     background-color: rgb(var(--green-rgb));
   }
-  
+
   .tile:nth-child(11n + 10):hover {
     background-color: rgb(var(--yellow-rgb));
   }
-  
+
   #SignupWrapper{
     z-index : 0;
     width : fit-content ;
@@ -126,75 +126,77 @@
     border: 1px solid rgba(254, 250, 224, 0.38);
     border-radius  : 1.75rem  ;
   }
-  //@media only screen and (max-width: 540px) {
-  //
-  //    /*
-  //        For mobile phones:
-  //    */
-  //    .App2 {
-  //        width: 100%;
-  //        overflow: visible;
-  //    }
-  //    .image-container > [class] {
-  //        transform: scale(1);
-  //    }
-  //    .quote {
-  //        margin-top: -50px;
-  //    }
-  //    .card-container {
-  //        grid-template-rows: 100vh minmax(100vh, auto);
-  //        grid-template-columns: none;
-  //        overflow: hidden;
-  //        height: auto;
-  //    }
-  //    .image-container {
-  //        width: 100%;
-  //        position: relative;
-  //    }
-  //    .image-container > img {
-  //        width: calc(110%);
-  //    }
-  //    .error {
-  //        font-size: 13px;
-  //    }
-  //    .form-container {
-  //        display: grid;
-  //        place-items: center ;
-  //        grid-template-columns: none;
-  //        grid-template-rows: none;
-  //        gap: 20px;
-  //        width: 100%;
-  //        padding: 0;
-  //    }
-  //    .mobile-btm-nav {
-  //        display: block;
-  //        position: absolute;
-  //        bottom: 0;
-  //        display: block;
-  //        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-  //    }
-  //    .FORM {
-  //        padding: 50px;
-  //        display: flex;
-  //        align-items: center;
-  //    }
-  //    .outro-overlay {
-  //        flex-direction: column;
-  //        justify-content: center;
-  //        gap: 30px;
-  //    }
-  //    .outro-overlay > #signedUp-illustration {
-  //        height: auto;
-  //        z-index: 2;
-  //    }
-  //    .outro-overlay > .shape {
-  //        display: none;
-  //    }
-  //    .outro-overlay > .outro-greeting {
-  //        font-size: 20px;
-  //        order: 1;
-  //    }
-  //}
+  @media only screen and (max-width: 540px) {
+
+      /*
+          For mobile phones:
+      */
+      .App2 {
+          width: 100%;
+          overflow: visible;
+      }
+      .image-container > [class] {
+          transform: scale(1);
+      }
+      .quote {
+          margin-top: -50px;
+      }
+      .card-container {
+          grid-template-rows: 100vh minmax(100vh, auto);
+          grid-template-columns: none;
+          overflow: hidden;
+          height: auto;
+      }
+      .image-container {
+          width: 100%;
+          position: relative;
+      }
+      .image-container > img {
+          width: calc(110%);
+      }
+      .error {
+          font-size: 13px;
+      }
+      .form-container {
+          display: grid;
+          place-items: center ;
+          grid-template-columns: none;
+          grid-template-rows: none;
+          gap: 20px;
+          width: 100%;
+          gap: 45px;
+          padding: 0;
+          color: rgba(255, 255, 255, .5);
+      }
+      .mobile-btm-nav {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          display: block;
+          animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+      }
+      .FORM {
+          padding: 50px;
+          display: flex;
+          align-items: center;
+      }
+      .outro-overlay {
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+      }
+      .outro-overlay > #signedUp-illustration {
+          height: auto;
+          z-index: 2;
+      }
+      .outro-overlay > .shape {
+          display: none;
+      }
+      .outro-overlay > .outro-greeting {
+          font-size: 20px;
+          order: 1;
+      }
+  }
   .mobile-btm-nav {
       text-decoration: none;
       display: none;
@@ -202,8 +204,8 @@
   .mobile-btm-nav > img {
       transform: scale(.3) rotateZ(180deg);
   }
-  input:focus ~ .SPAN,
-  input:valid ~ .SPAN{
+  .input:focus ~ .SPAN,
+  .input:valid ~ .SPAN{
       font-size: 10px;
       transform: translateX(4px) translateY(-7px);
       font-size: 0.80em;
@@ -213,14 +215,14 @@
       color: white;
       border-radius: 2px;
   }
-  input:focus,
-  input:focus-visible {
+  .input:focus,
+  .input:focus-visible {
       border: 1px solid  var(--green);
       box-shadow: 0 0 5px rgb(0,0,0,.3);
       outline: none;
   }
-  input:valid {
-      border: 1px solid var(--green);  
+  .input:valid {
+      border: 1px solid var(--green);
   }
   .form-container {
       width: 50vw;
@@ -237,7 +239,7 @@
       font-size: 40px;
       color: --green ;
   }
-  input {
+  .input {
       display: block;
       border-radius: 4px;
       border: 0;
@@ -247,8 +249,8 @@
       background-color: rgba(255, 255, 255, 0);
       transition: all .5s ease-in;
       color: var(--opac-white);
-  } 
-  input::placeholder{
+  }
+  .input::placeholder{
       content: none;
   }
   .SPAN {
@@ -298,83 +300,84 @@
       overflow: hidden;
       background-color: var(--darky);
   }
-  //@media only screen and (max-width: 907px) {
-  //
-  //    /*
-  //        For mobile phones:
-  //    */
-  //    .App2 {
-  //        width: 100%;
-  //        overflow: visible;
-  //    }
-  //    .image-container > [class] {
-  //        transform: scale(1);
-  //    }
-  //    .quote {
-  //        margin-top: -50px;
-  //    }
-  //    .card-container {
-  //        grid-template-rows: 100vh minmax(100vh, auto);
-  //        grid-template-columns: none;
-  //        overflow: hidden;
-  //        height: auto;
-  //    }
-  //    .image-container {
-  //        width: 100%;
-  //        position: relative;
-  //    }
-  //    .image-container > img {
-  //        width: calc(110%);
-  //    }
-  //    .error {
-  //        font-size: 13px;
-  //    }
-  //    .form-container {
-  //        display: grid;
-  //        place-items: center ;
-  //        grid-template-columns: none;
-  //        grid-template-rows: none;
-  //        gap: 20px;
-  //        width: 100%;
-  //        gap: 45px;
-  //        padding: 0;
-  //    }
-  //    .mobile-btm-nav {
-  //        display: block;
-  //        position: absolute;
-  //        bottom: 0;
-  //        display: block;
-  //        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-  //    }
-  //    .FORM {
-  //        padding: 50px;
-  //        display: flex;
-  //        align-items: center;
-  //    }
-  //    .outro-overlay {
-  //        flex-direction: column;
-  //        justify-content: center;
-  //        gap: 30px;
-  //    }
-  //    .outro-overlay > #signedUp-illustration {
-  //        height: auto;
-  //        z-index: 2;
-  //    }
-  //    .outro-overlay > .shape {
-  //        display: none;
-  //    }
-  //    .outro-overlay > .outro-greeting {
-  //        font-size: 20px;
-  //        order: 1;
-  //    }
-  //}:root {
-//  --red-rgb: 222 249 196;
-//  --blue-rgb: 156 219 166;
-//  --green-rgb: 80 180 152;
-//  --yellow-rgb: 70 133 133;
-//
-//  --background-rgb: 204 213 174;
-//}
+  @media only screen and (max-width: 907px) {
+
+      /*
+          For mobile phones:
+      */
+      .App2 {
+          width: 100%;
+          overflow: visible;
+      }
+      .image-container > [class] {
+          transform: scale(1);
+      }
+      .quote {
+          margin-top: -50px;
+      }
+      .card-container {
+          grid-template-rows: 100vh minmax(100vh, auto);
+          grid-template-columns: none;
+          overflow: hidden;
+          height: auto;
+      }
+      .image-container {
+          width: 100%;
+          position: relative;
+      }
+      .image-container > img {
+          width: calc(110%);
+      }
+      .error {
+          font-size: 13px;
+      }
+      .form-container {
+          display: grid;
+          place-items: center ;
+          grid-template-columns: none;
+          grid-template-rows: none;
+          gap: 20px;
+          width: 100%;
+          gap: 45px;
+          padding: 0;
+          color: rgba(255, 255, 255, .5);
+      }
+      .mobile-btm-nav {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          display: block;
+          animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+      }
+      .FORM {
+          padding: 50px;
+          display: flex;
+          align-items: center;
+      }
+      .outro-overlay {
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+      }
+      .outro-overlay > #signedUp-illustration {
+          height: auto;
+          z-index: 2;
+      }
+      .outro-overlay > .shape {
+          display: none;
+      }
+      .outro-overlay > .outro-greeting {
+          font-size: 20px;
+          order: 1;
+      }
+  }:root {
+  --red-rgb: 222 249 196;
+  --blue-rgb: 156 219 166;
+  --green-rgb: 80 180 152;
+  --yellow-rgb: 70 133 133;
+
+  --background-rgb: 204 213 174;
+}
 :root {
     --green: rgb(222 ,249 ,196);
     --red: rgb(156 ,219, 166);
@@ -432,7 +435,7 @@
   background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
 }
 
-.tile {  
+.tile {
   border: 1px solid rgb(255 255 255 / 25%);
   transition: background-color 1500ms;
 }
@@ -501,77 +504,77 @@
   border: 1px solid rgba(254, 250, 224, 0.38);
   border-radius  : 1.75rem  ;
 }
-//@media only screen and (max-width: 540px) {
-//
-//    /*
-//        For mobile phones:
-//    */
-//    .App2 {
-//        width: 100%;
-//        overflow: visible;
-//    }
-//    .image-container > [class] {
-//        transform: scale(1);
-//    }
-//    .quote {
-//        margin-top: -50px;
-//    }
-//    .card-container {
-//        grid-template-rows: 100vh minmax(100vh, auto);
-//        grid-template-columns: none;
-//        overflow: hidden;
-//        height: auto;
-//    }
-//    .image-container {
-//        width: 100%;
-//        position: relative;
-//    }
-//    .image-container > img {
-//        width: calc(110%);
-//    }
-//    .error {
-//        font-size: 13px;
-//    }
-//    .form-container {
-//        display: grid;
-//        place-items: center ;
-//        grid-template-columns: none;
-//        grid-template-rows: none;
-//        gap: 20px;
-//        width: 100%;
-//        gap: 45px;
-//        padding: 0;
-//        color: rgba(255, 255, 255, .5);
-//    }
-//    .mobile-btm-nav {
-//        display: block;
-//        position: absolute;
-//        bottom: 0;
-//        display: block;
-//        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-//    }
-//    .FORM {
-//        padding: 50px;
-//        display: flex;
-//        align-items: center;
-//    }
-//    .outro-overlay {
-//        flex-direction: column;
-//        justify-content: center;
-//        gap: 30px;
-//    }
-//    .outro-overlay > #signedUp-illustration {
-//        height: auto;
-//        z-index: 2;
-//    }
-//    .outro-overlay > .shape {
-//        display: none;
-//    }
-//    .outro-overlay > .outro-greeting {
-//        font-size: 20px;
-//        order: 1;
-//    }
-//}
+@media only screen and (max-width: 540px) {
+
+    /*
+        For mobile phones:
+    */
+    .App2 {
+        width: 100%;
+        overflow: visible;
+    }
+    .image-container > [class] {
+        transform: scale(1);
+    }
+    .quote {
+        margin-top: -50px;
+    }
+    .card-container {
+        grid-template-rows: 100vh minmax(100vh, auto);
+        grid-template-columns: none;
+        overflow: hidden;
+        height: auto;
+    }
+    .image-container {
+        width: 100%;
+        position: relative;
+    }
+    .image-container > img {
+        width: calc(110%);
+    }
+    .error {
+        font-size: 13px;
+    }
+    .form-container {
+        display: grid;
+        place-items: center ;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 20px;
+        width: 100%;
+        gap: 45px;
+        padding: 0;
+        color: rgba(255, 255, 255, .5);
+    }
+    .mobile-btm-nav {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+    }
+    .FORM {
+        padding: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .outro-overlay {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+    .outro-overlay > #signedUp-illustration {
+        height: auto;
+        z-index: 2;
+    }
+    .outro-overlay > .shape {
+        display: none;
+    }
+    .outro-overlay > .outro-greeting {
+        font-size: 20px;
+        order: 1;
+    }
+}
 .mobile-btm-nav {
     text-decoration: none;
     display: none;
@@ -579,8 +582,8 @@
 .mobile-btm-nav > img {
     transform: scale(.3) rotateZ(180deg);
 }
-input:focus ~ .SPAN,
-input:valid ~ .SPAN{
+.input:focus ~ .SPAN,
+.input:valid ~ .SPAN{
     font-size: 10px;
     transform: translateX(4px) translateY(-7px);
     font-size: 0.80em;
@@ -590,14 +593,14 @@ input:valid ~ .SPAN{
     color: white;
     border-radius: 2px;
 }
-input:focus,
-input:focus-visible {
+.input:focus,
+.input:focus-visible {
     border: 1px solid  var(--green);
     box-shadow: 0 0 5px rgb(0,0,0,.3);
     outline: none;
 }
-input:valid {
-    border: 1px solid var(--green);  
+.input:valid {
+    border: 1px solid var(--green);
 }
 .form-container {
     width: 50vw;
@@ -614,7 +617,7 @@ input:valid {
     font-size: 40px;
     color: --green ;
 }
-input {
+.input {
     display: block;
     border-radius: 4px;
     border: 0;
@@ -624,8 +627,8 @@ input {
     background-color: rgba(255, 255, 255, 0);
     transition: all .5s ease-in;
     color: var(--opac-white);
-} 
-input::placeholder{
+}
+.input::placeholder{
     content: none;
 }
 .SPAN {
@@ -675,92 +678,74 @@ input::placeholder{
     overflow: hidden;
     background-color: var(--darky);
 }
-//@media only screen and (max-width: 907px) {
-//
-//    /*
-//        For mobile phones:
-//    */
-//    .App2 {
-//        width: 100%;
-//        overflow: visible;
-//    }
-//    .image-container > [class] {
-//        transform: scale(1);
-//    }
-//    .quote {
-//        margin-top: -50px;
-//    }
-//    .card-container {
-//        grid-template-rows: 100vh minmax(100vh, auto);
-//        grid-template-columns: none;
-//        overflow: hidden;
-//        height: auto;
-//    }
-//    .image-container {
-//        width: 100%;
-//        position: relative;
-//    }
-//    .image-container > img {
-//        width: calc(110%);
-//    }
-//    .error {
-//        font-size: 13px;
-//    }
-//    .form-container {
-//        display: grid;
-//        place-items: center ;
-//        grid-template-columns: none;
-//        grid-template-rows: none;
-//        gap: 20px;
-//        width: 100%;
-//        gap: 45px;
-//        padding: 0;
-//    }
-//    .mobile-btm-nav {
-//        display: block;
-//        position: absolute;
-//        bottom: 0;
-//        display: block;
-//        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
-//    }
-//    .FORM {
-//        padding: 50px;
-//        display: flex;
-//        align-items: center;
-//    }
-//    .outro-overlay {
-//        flex-direction: column;
-//        justify-content: center;
-//        gap: 30px;
-//    }
-//    .outro-overlay > #signedUp-illustration {
-//        height: auto;
-//        z-index: 2;
-//    }
-//    .outro-overlay > .shape {
-//        display: none;
-//    }
-//    .outro-overlay > .outro-greeting {
-//        font-size: 20px;
-//        order: 1;
-//    }
-//}
+@media only screen and (max-width: 907px) {
 
-@media (max-width: 768px) {
-  #SignupWrapper {
-    height: 100%;
-    font-size: 1em;
-    width: 70%;
-  }
-  .form-container {
-    grid-template-columns: 1fr;
-    font-size: 1em;
-  }
-  .input-container {
-    height: 80%;
-  }
-  .input-container > input {
-
-    color: #416887;
-  }
+    /*
+        For mobile phones:
+    */
+    .App2 {
+        width: 100%;
+        overflow: visible;
+    }
+    .image-container > [class] {
+        transform: scale(1);
+    }
+    .quote {
+        margin-top: -50px;
+    }
+    .card-container {
+        grid-template-rows: 100vh minmax(100vh, auto);
+        grid-template-columns: none;
+        overflow: hidden;
+        height: auto;
+    }
+    .image-container {
+        width: 100%;
+        position: relative;
+    }
+    .image-container > img {
+        width: calc(110%);
+    }
+    .error {
+        font-size: 13px;
+    }
+    .form-container {
+        display: grid;
+        place-items: center ;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 20px;
+        width: 100%;
+        gap: 45px;
+        padding: 0;
+        color: rgba(255, 255, 255, .5);
+    }
+    .mobile-btm-nav {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+    }
+    .FORM {
+        padding: 50px;
+        display: flex;
+        align-items: center;
+    }
+    .outro-overlay {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+    .outro-overlay > #signedUp-illustration {
+        height: auto;
+        z-index: 2;
+    }
+    .outro-overlay > .shape {
+        display: none;
+    }
+    .outro-overlay > .outro-greeting {
+        font-size: 20px;
+        order: 1;
+    }
 }

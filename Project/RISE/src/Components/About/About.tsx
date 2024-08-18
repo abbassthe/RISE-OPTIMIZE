@@ -6,16 +6,16 @@ function About() {
   const { scrollYProgress } = useScroll();
   const [scale, setScale] = useState(1);
 
-  const z = useTransform(scrollYProgress, [0.63, 0.7], [1, 9]);
+  const z = useTransform(scrollYProgress, [0.63, 0.6648228281823952], [1, 9]);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((latest) => {
-      if (latest >= 0.63 && latest <= 0.7) {
+      if (latest >= 0.63 && latest <= 0.648) {
         setScale(1 / z.get());
       } else if (latest < 0.63) {
         setScale(1);
       } else {
-        setScale(0.1);
+        setScale(0.2);
       }
       console.log(scrollYProgress.get());
     });
@@ -28,7 +28,9 @@ function About() {
       <div className="test">
         <div className="percentage">
           {Math.round(scale * 100)}%{" "}
-          <span>of farm land lost to locust each year</span>
+          <span style={{ width: "190%", marginLeft: "-35%" }}>
+            of earths land could be effected by locust swarms
+          </span>
         </div>
       </div>
       <motion.div
@@ -36,7 +38,7 @@ function About() {
         style={{ scale }}
         initial="hidden"
         whileInView="visible"
-        // viewport={{ once: true }}
+      // viewport={{ once: true }}
       >
         <img src="pexels-tomfisk-2476015.jpg" className="land_img"></img>
       </motion.div>

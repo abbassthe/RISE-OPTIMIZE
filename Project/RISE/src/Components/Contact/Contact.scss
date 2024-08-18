@@ -13,16 +13,13 @@
    overflow-x: hidden;
    overflow-y: scroll;
  }
- .App {
-  height: 75vh;
-  margin-top: 15vh;
-}
- form {
+
+.formCont {
   margin-top: 20px;
 }
 
 .formRowC {
-  margin: 40px 0 40px 0; 
+  margin: 40px 0 40px 0;
 }
 
 .formInputC {
@@ -42,21 +39,5 @@
   margin-bottom: 25px;
 }
 
-@media (max-width: 768px) {
-  .submit-message {
-    width: 12 5px;
-    margin-left: 200px;
-  }
-}
-  .text {
-    top:30%;
-    left:50%;
-    position: absolute;
-    font-family: 'Franklin Gothic Heavy';
-    font-size: 15vw;
-    color:white;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3),
-    5px 5px 70px rgba(255,255,255,0.5);
-    transform: scale(1,1.1) translate(-50%, 10%);
-  }
+
 
