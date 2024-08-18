@@ -1,8 +1,3 @@
-# RISE-OPTIMIZE
-
-
-# FlutterForecast
-
 ## Setup and Installation
 
 ### Prerequisites
