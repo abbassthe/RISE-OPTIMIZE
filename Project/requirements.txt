@@ -7,8 +7,10 @@ django-rest-framework==0.1.0
 djangorestframework==3.15.2
 djangorestframework-gis==1.0
 
-GDAL==3.6.2
+tqdm==4.66.1
 
+GDAL==3.6.2
+Shapely==2.0.1
 jsonpointer==2.1
 
 mkl-service==2.4.0
@@ -28,11 +30,10 @@ pyproj==3.6.1
 PyQt5==5.15.10
 PyQtWebEngine==5.15.6
 
-pywin32==305.1
-
 setuptools==69.5.1
 
-torch==2.4.0
+torch==2.2.2
 
 wheel==0.43.0
 django
+django-cors-headers==3.14.0

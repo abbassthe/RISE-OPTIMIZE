@@ -17,6 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 import os
 
+GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH', '/PUT/YOUR/PATH/TO/libgdal.30.dylib')  
+GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH', '/PUT/YOUR/PATH/TO/libgeos_c.1.dylib')
+
+
 INSECTS_ROOT = os.path.join(BASE_DIR, "insects")
 INSECTS_URL = "/insects/"
 # Quick-start development settings - unsuitable for production
