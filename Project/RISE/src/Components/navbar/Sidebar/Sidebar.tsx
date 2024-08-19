@@ -53,7 +53,6 @@ function Sidebar() {
       { name: "Homepage", path: "/homepage" },
       { name: "Map", path: "/map" },
       { name: "Insect2vect", path: "/Insect2vect" },
-      { name: "Contact", path: "/contact" },
       { name: "Logout", path: "/logout" },
     ];
   } else {
@@ -62,7 +61,6 @@ function Sidebar() {
       { name: "Homepage", path: "/homepage" },
       { name: "Login", path: "/login" },
       { name: "SignUp", path: "/signup" },
-      { name: "Contact", path: "/contact" },
     ];
   }
 
