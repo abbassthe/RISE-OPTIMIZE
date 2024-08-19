@@ -1,6 +1,7 @@
 ## Setup and Installation
 
 ### Prerequisites
+
 - Python 3.7 or higher
 - Node.js
 - PostgreSQL
@@ -10,12 +11,14 @@
 ### Installation Steps
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/yourusername/flutterforecast.git
    cd flutterforecast
    ```
 
 2. **Backend Setup**
+
    - Install GDAL (https://gdal.org/)
    - Setup and Install PostgreSQL (https://www.postgresql.org/)
    - Directly install PostGIS extension (https://postgis.net/documentation/getting_started/)
@@ -31,6 +34,7 @@
      python manage.py runserver
 
 3. **Frontend Setup**
+
    - Navigate to the Project directory inside RISE-OPTIMIZE folder
    - Enter RISE folder, open a terminal at that path
    - Install the dependencies:
@@ -48,18 +52,19 @@
    - Backend APIs are accessible at `http://localhost:8000`.
 
 ## Running Insect2vec
+
 Note: After running the server, please upload data to the insect2vec model only in .pkl type,
 and in the following name format to avoid errors: maps_XXXX_YY.pkl
 where XXXX is the specific year of the file data (ex: 2024)
-and YY is the specific month of the file  data (ex: 05, referring to May)
+and YY is the specific month of the file data (ex: 05, referring to May)
 
 ## Final pre-trained model
-Unfortunately, uploading large files is not supported by GitHub, we've uploaded the 
+
+Unfortunately, uploading large files is not supported by GitHub, we've uploaded the
 final pre-trained model on the following link: https://drive.google.com/file/d/1-JdBkBZhfofZOBO5ojhyctfc3sVGfDFK/view?usp=sharing
 
 <img width="1383" alt="image" src="https://github.com/user-attachments/assets/32e55bdc-7657-440f-9c4f-4ea72d172b1a">
 
 ## Map population (optional)
-The map is currently empty to populate it you can run the script in the tests.py file in the points model after getting a mask from running infrence using the final pretrained model mention above 
-command to run infrence : python model_inference.py -config {config_file_path} -ckpt {path_to_checkpoint} -input {input_tiff_path} -output {output_folder_path} -input_type tif -bands 0 1 2 3 4 5
 
+The map will be empty when you start at first to populate it you can just run python manage.py test and it will start testing the points app in the process it will populate the map with points from a granule that we have ran infrence on (by defualt it will be at the year 2030)

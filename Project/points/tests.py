@@ -413,7 +413,20 @@ import django
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 from django.contrib.gis.geos import Point
+from PIL import Image
+import numpy as np
 
+# Load the grayscale image
+image = Image.open(
+    r"C:\Users\abbas\OneDrive\Desktop\amazon_thing\RISE-OPTIMIZE\Project\points\mergedfinal_pred.tif"
+).convert("L")
+
+crop_box = (3000, 3000, 3020, 3020)  # Adjust these values based on the desired portion
+
+# Crop the image
+cropped_image = image.crop(crop_box)
+
+# Convert the image to a NumPy array
 # Parse XML
 tree = ET.ElementTree(ET.fromstring(xml_data))
 root = tree.getroot()
@@ -463,14 +476,14 @@ def process_matrix_and_store(matrix, ulx, uly, pixel_size):
     rows, cols = matrix.shape
     for y in range(rows):
         for x in range(cols):
-            if matrix[y, x] == 255:
+            if matrix[y, x] >= 1:
                 lon, lat = pixel_to_latlon(x, y, ulx, uly, pixel_size)
                 Egg1 = Egg(longitude=lon, latitude=lat)
                 Egg1.save()
 
 
 # Example 2D matrix (using numpy for convenience)
-example_matrix = np.full((3000, 3000), 255)
+example_matrix = np.array(image)
 
 
 # Assuming `ulx`, `uly`, and `pixel_size` have been extracted as shown previously
