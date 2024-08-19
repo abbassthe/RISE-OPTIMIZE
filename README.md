@@ -16,7 +16,7 @@
    ```
 
 2. **Backend Setup**
-   - Install GDAL (https://gdal.org/) a
+   - Install GDAL (https://gdal.org/)
    - Setup and Install PostgreSQL (https://www.postgresql.org/)
    - Directly install PostGIS extension (https://postgis.net/documentation/getting_started/)
    - Install the required Python packages:
