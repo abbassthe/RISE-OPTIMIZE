@@ -421,10 +421,10 @@ image = Image.open(
     r"C:\Users\abbas\OneDrive\Desktop\amazon_thing\RISE-OPTIMIZE\Project\points\mergedfinal_pred.tif"
 ).convert("L")
 
-crop_box = (3000, 3000, 3020, 3020)  # Adjust these values based on the desired portion
+crop_box = (3000, 3000, 3100, 3100)  # Adjust these values based on the desired portion
 
 # Crop the image
-cropped_image = image.crop(crop_box)
+image = image.crop(crop_box)
 
 # Convert the image to a NumPy array
 # Parse XML
