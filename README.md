@@ -16,7 +16,7 @@
    ```
 
 2. **Backend Setup**
-   - Install GDAL (https://gdal.org/)
+   - Install GDAL (https://gdal.org/) a
    - Setup and Install PostgreSQL (https://www.postgresql.org/)
    - Directly install PostGIS extension (https://postgis.net/documentation/getting_started/)
    - Install the required Python packages:
@@ -25,6 +25,10 @@
      ```
    - Navigate to the Project directory, then Project folder
    - Include the PostgreSQL authentication info in the "settings.py" inside the Project app
+   - Open "settings.py" and write the library path for GDAL and GEOS
+   - Setup PostgreSQL Information in "settings.py"
+   - Write query "CREATE EXTENSION postgis;" in the PostgreSQL database
+   - Change the gmail credentials to yours if you wish for reset password feature (Note: password is the AppPassword of the gmail account)
    - Open terminal at that path and run migrations:
      python manage.py migrate
    - Run the django backend server at port 8000 by:
