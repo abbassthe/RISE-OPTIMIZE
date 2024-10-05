@@ -1,4 +1,4 @@
-"use client";
+
 
 import "./Contact.scss";
 import "./ccontainer.scss";
