@@ -5,7 +5,7 @@ export default defineConfig({
 
   build: {
     // generate .vite/manifest.json in outDir
-    chunkSizeWarningLimit: 1600,
+    chunkSizeWarningLimit: 5000,
     manifest: true,
     rollupOptions: {
       // overwrite default .html entry
