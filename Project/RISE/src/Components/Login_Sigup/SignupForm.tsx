@@ -1,5 +1,5 @@
 import "./Signup.scss";
-import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import  { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -27,11 +27,11 @@ function SignupForm() {
       try {
         await client
           .get("/userapi/user")
-          .then(function (res) {
+          .then(function () {
             setCurrentUser(true);
             navigate("/homepage");
           })
-          .catch(function (error) {
+          .catch(function () {
             setCurrentUser(false);
           });
       } catch (error) {
@@ -84,13 +84,13 @@ function SignupForm() {
           phone: phone,
           password: password,
         })
-        .then(function (res) {
+        .then(function () {
           client
             .post("/userapi/login", {
               email: email,
               password: password,
             })
-            .then(function (res) {
+            .then(function () {
               setCurrentUser(true);
               setErrorMessage(null);
               navigate("/homepage");

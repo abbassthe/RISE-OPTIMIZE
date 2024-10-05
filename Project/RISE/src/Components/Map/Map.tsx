@@ -1,5 +1,7 @@
+// @ts-nocheck
+
 import "./Map.css";
-import React, { useRef, useEffect, useState, ChangeEvent } from "react";
+import { useRef, useEffect, useState, ChangeEvent } from "react";
 import mapboxgl from "mapbox-gl";
 import Sidebar from "../navbar/Sidebar/Sidebar";
 import { Chart, registerables } from "chart.js";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import  { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./login.scss";
@@ -12,7 +12,7 @@ const client = axios.create({
 });
 
 function Login() {
-  const [currentUser, setCurrentUser] = useState<boolean | null>(null);
+  const [_currentUser, setCurrentUser] = useState<boolean | null>(null);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -23,11 +23,11 @@ function Login() {
       try {
         await client
           .get("/userapi/user")
-          .then(function (res) {
+          .then(function () {
             setCurrentUser(true);
             navigate("/homepage");
           })
-          .catch(function (error) {
+          .catch(function () {
             setCurrentUser(false);
           });
       } catch (error) {
@@ -86,7 +86,7 @@ function Login() {
           email: email,
           password: password,
         })
-        .then(function (res) {
+        .then(function () {
           setCurrentUser(true);
           setErrorMessage(null); // Clear error message on successful login
           navigate("/homepage");

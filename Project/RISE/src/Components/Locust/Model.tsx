@@ -1,4 +1,4 @@
-import { useAnimations, useGLTF, useScroll } from "@react-three/drei";
+import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Group } from "three";
@@ -7,9 +7,8 @@ useGLTF.preload("/untitled copy.glb");
 
 export default function Model() {
   const group = useRef<Group>(null);
-  const { nodes, materials, animations, scene } = useGLTF("/untitled copy.glb");
-  const { actions, clips } = useAnimations(animations, scene);
-  const scroll = useScroll();
+  const {  animations, scene } = useGLTF("/untitled copy.glb");
+  const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
     console.log(actions);
