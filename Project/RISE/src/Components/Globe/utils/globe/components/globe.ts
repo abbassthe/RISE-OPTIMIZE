@@ -1,6 +1,5 @@
 import { Color } from "three";
 import { FlightsProps } from "..";
-import flightsDefault from "../assets/arcs.json";
 import countries from "../assets/globe.json";
 import { Globe as ThreeGlobe } from "../systems/Globe";
 import { genRandomNumbers, hexToRgb } from "../systems/utils";

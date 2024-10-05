@@ -1,6 +1,5 @@
 "use client";
 
-import { useProgress, Html } from "@react-three/drei";
 import "./Contact.scss";
 import "./ccontainer.scss";
 import ContactForm from "./ContactForm";

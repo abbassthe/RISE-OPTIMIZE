@@ -1,6 +1,6 @@
 import { Clock, PerspectiveCamera, Scene, WebGLRenderer } from "three";
 import { Globe as threeGlobe } from "./Globe";
-import { Orbit } from "./Orbit";
+import { Orbit } from "./Orbit.ts";
 
 class Loop {
   camera: PerspectiveCamera;
