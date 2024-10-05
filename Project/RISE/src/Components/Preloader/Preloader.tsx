@@ -7,7 +7,7 @@ interface Combination {
   roundness: number;
 }
 function Preloader() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible] = useState(true);
   useEffect(() => {
     const wrapper = document.getElementById("wrapperPre") as HTMLElement;
 
