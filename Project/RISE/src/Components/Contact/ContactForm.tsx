@@ -52,7 +52,7 @@ const ContactForm: React.FC = () => {
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     // Destructure data object
     let am: number = 0;
-    const { name, email, subject, message } = data;
+    const { name, email, message } = data;
     try {
       // Disable form while processing submission
       setDisabled(true);

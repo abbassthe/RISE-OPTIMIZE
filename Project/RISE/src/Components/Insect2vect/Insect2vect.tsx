@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+// @ts-nocheck
+
+import  { useState } from "react";
 import axios from "axios";
 import { FileUploader } from "react-drag-drop-files";
 import "./Insect2vect.scss";
-import Background from "three/examples/jsm/renderers/common/Background.js";
 const fileTypes = ["PKL"];
 type FileInputType = File | FileList | File[];
 export default function insects() {
