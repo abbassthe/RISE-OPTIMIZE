@@ -13,7 +13,7 @@ GDAL==3.6.2
 Shapely==2.0.1
 jsonpointer==2.1
 
-mkl-service==2.4.0
+mkl-service==2.4.1
 
 numpy==1.26.4
 
