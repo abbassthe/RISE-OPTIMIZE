@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
-import emailjs from "@emailjs/browser";
+import { useForm, SubmitHandler } from "react-hook-form";
 import "./Contact.scss";
 import "./ccontainer.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,9 +10,6 @@ axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.withCredentials = true;
 
-const client = axios.create({
-  baseURL: "http://127.0.0.1:8000",
-});
 
 type AlertInfo = {
   display: boolean;
@@ -62,12 +58,7 @@ const ContactForm: React.FC = () => {
       setDisabled(true);
 
       // Define template params
-      const templateParams = {
-        name,
-        email,
-        subject,
-        message,
-      };
+
       axios
         .get("http://localhost:8000/contactapi/contactusers?search=" + email)
         .then(function (res) {
@@ -75,7 +66,7 @@ const ContactForm: React.FC = () => {
           let msga = { user: am, msg: message };
           axios.post("http://localhost:8000/contactapi/contactmsgs/", msga);
         })
-        .catch(function (err) {
+        .catch(function () {
           let user = { name: name, email: email };
           axios.post("http://localhost:8000/contactapi/contactusers/", user);
           axios

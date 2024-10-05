@@ -88,11 +88,8 @@ class Globe {
     this.rings = props.rings || Globe.defaultProps.rings;
     this.maxRings = props.maxRings || Globe.defaultProps.maxRings;
 
-    if (flights.length > 0) {
-      flights.map((flight) => this.flights.push(flight));
-    } else {
-      this.flights = flightsDefault.flights;
-    }
+    flights.map((flight) => this.flights.push(flight));
+
 
     this.instance = new ThreeGlobe({
       waitForGlobeReady: true,
@@ -122,7 +119,7 @@ class Globe {
         .showAtmosphere(this.showAtmosphere)
         .atmosphereColor(this.atmosphereColor)
         .atmosphereAltitude(this.atmosphereAltitude)
-        .hexPolygonColor((e) => {
+        .hexPolygonColor(() => {
           return this.polygonColor;
         });
     }, delay);
@@ -140,13 +137,13 @@ class Globe {
         .arcAltitude((e) => {
           return (e as { arcAlt: number }).arcAlt * 1;
         })
-        .arcStroke((e) => {
+        .arcStroke(() => {
           return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
         })
         .arcDashLength(this.flightLength)
         .arcDashInitialGap((e) => (e as { order: number }).order * 1)
         .arcDashGap(15)
-        .arcDashAnimateTime((e) => this.flightTime)
+        .arcDashAnimateTime(() => this.flightTime)
         .pointsData(this.pointsData)
         .pointColor((e) => (e as { color: string }).color)
         .pointsMerge(true)
@@ -170,7 +167,7 @@ class Globe {
         Math.floor((this.pointsData.length * 4) / 5)
       );
       this.instance.ringsData(
-        this.pointsData.filter((d, i) => this.numbersOfRings.includes(i))
+        this.pointsData.filter((_d, i) => this.numbersOfRings.includes(i))
       );
 
       this.deltaGlobe = this.deltaGlobe % this.interval;

@@ -1,17 +1,10 @@
 "use client";
 
-import { Canvas, useThree } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
-import { useProgress, Html, ScrollControls, Scroll } from "@react-three/drei";
+import { useProgress, Html } from "@react-three/drei";
 import "./Contact.scss";
 import "./ccontainer.scss";
 import ContactForm from "./ContactForm";
 import "bootstrap/dist/css/bootstrap.min.css";
-function Loader() {
-  const { progress, active } = useProgress();
-
-  return <Html center>{progress.toFixed(1)} % loaded</Html>;
-}
 
 function Contact() {
   return (
@@ -19,7 +12,6 @@ function Contact() {
       className="wrapperContact d-flex flex-row justify-content-evenly align-items-center"
       style={{ overflowY: "hidden" }}
     >
-      {/* <div className="section1"> */}
 
       <ContactForm />
       <div
@@ -36,8 +28,7 @@ function Contact() {
           Get in touch with us to request an invoice for a specific area
         </h5>
       </div>
-      {/* <div className="text">Contact US</div> */}
-      {/* </div> */}
+
     </div>
   );
 }

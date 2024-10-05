@@ -156,6 +156,7 @@ function SignupForm() {
                 type="text"
                 name="f-name"
                 id="f-name"
+                style={{ color: "black" }}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setUsername(e.target.value)
                 }

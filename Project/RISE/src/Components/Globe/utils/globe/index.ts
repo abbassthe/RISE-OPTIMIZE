@@ -5,7 +5,7 @@ import { createLights } from "./components/lights";
 import { aspect, cameraZ, canvasHeight, canvasWidth } from "./systems/config";
 import { createControls } from "./systems/controls";
 import { Loop } from "./systems/loop";
-import { Orbit } from "./systems/Orbit";
+import { Orbit } from "./systems/Orbit.ts";
 import { pointOfView } from "./systems/utils";
 
 export type FlightsProps = {
@@ -116,7 +116,6 @@ class World {
       autoRotate: this.globeConfig.autoRotate,
       autoRotateSpeed: this.globeConfig.autoRotateSpeed,
     });
-    this.controls.update();
     this.loop.updatables.push(this.controls);
 
     const { ambientLight, dLight, dLight1, dLight2 } = createLights({
