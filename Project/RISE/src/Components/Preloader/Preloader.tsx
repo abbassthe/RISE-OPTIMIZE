@@ -6,8 +6,10 @@ interface Combination {
   configuration: number;
   roundness: number;
 }
+
 function Preloader() {
-  const [isVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);  // Initialize to true
+
   useEffect(() => {
     const wrapper = document.getElementById("wrapperPre") as HTMLElement;
 
@@ -43,8 +45,16 @@ function Preloader() {
       prev = index;
     }, 1500);
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
+    // Set a timeout to hide the preloader after 5 seconds (or any duration you prefer)
+    const timeoutId = setTimeout(() => {
+      setIsVisible(false);  // Hide preloader after 5 seconds
+    }, 5000);
+
+    // Cleanup intervals and timeout on component unmount
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
