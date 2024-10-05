@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-i%vsb-f!htz+6*ayjz%83e+tg0a)i^c&0iphr)l2^q1a7$5)t@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://backendflutterforecast.onrender.com"]
+ALLOWED_HOSTS = ["backendflutterforecast.onrender.com"]
 
 
 # Application definition
