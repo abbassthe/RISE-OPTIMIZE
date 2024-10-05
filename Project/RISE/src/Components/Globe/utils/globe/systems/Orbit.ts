@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { PerspectiveCamera } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-public class Orbit extends OrbitControls {
+class Orbit extends OrbitControls {
   public enablePan: boolean;
   public enableZoom: boolean;
   public minDistance: number;
