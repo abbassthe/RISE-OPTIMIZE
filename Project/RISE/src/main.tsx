@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
@@ -11,7 +10,6 @@ import Logout from "./Components/Logout/logout.tsx";
 import PasswordReset from "./Components/PasswordReset/ResetPassword.tsx";
 import PasswordResetConfirm from "./Components/PasswordReset/ResetPasswordConfirm.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/homepage" element={<App />} />
@@ -30,5 +28,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/Insect2vect" element={<Insect2vect />} />
       </Routes>
     </Router>
-  </React.StrictMode>
 );
