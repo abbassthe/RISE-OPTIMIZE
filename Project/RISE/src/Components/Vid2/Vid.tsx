@@ -1,6 +1,5 @@
 import "./Vid.scss";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 function Vid2() {
   const { scrollY } = useScroll();

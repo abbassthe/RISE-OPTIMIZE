@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./reset.scss";
@@ -12,7 +12,7 @@ const client = axios.create({
 });
 
 function ResetPassword() {
-  const [currentUser, setCurrentUser] = useState<boolean | null>(null);
+  const [_currentUser, setCurrentUser] = useState<boolean | null>(null);
   const [email, setEmail] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -22,11 +22,11 @@ function ResetPassword() {
       try {
         await client
           .get("/userapi/user")
-          .then(function (res) {
+          .then(function () {
             setCurrentUser(true);
             navigate("/homepage");
           })
-          .catch(function (error) {
+          .catch(function () {
             setCurrentUser(false);
           });
       } catch (error) {

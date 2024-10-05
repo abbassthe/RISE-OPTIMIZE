@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import React, { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import  { useState,  FormEvent, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./resetconfirm.scss";
@@ -50,7 +50,7 @@ function PasswordResetConfirm() {
           return null;
         }
       })
-      .catch(function (error) {
+      .catch(function () {
         if (errorMessage != "Password reset complete") {
           navigate("/homepage");
         }

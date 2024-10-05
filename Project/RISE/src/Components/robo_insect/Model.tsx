@@ -1,5 +1,5 @@
-import { useAnimations, useGLTF, useScroll } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+// @ts-nocheck
+import { useAnimations, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { Group } from "three";
 
@@ -8,11 +8,10 @@ useGLTF.preload("/uploads_files_3171586_drgnfly.glb");
 
 export default function Model() {
   const group = useRef<Group>(null);
-  const { nodes, materials, animations, scene } = useGLTF(
+  const { animations, scene } = useGLTF(
     "/uploads_files_3171586_drgnfly.glb"
   );
-  const { actions, clips } = useAnimations(animations, scene);
-  const scroll = useScroll();
+  const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
     console.log(actions);

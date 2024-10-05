@@ -1,4 +1,3 @@
-import { spring } from "framer-motion";
 import { motion } from "framer-motion";
 import "./Sidebar.scss";
 import { useState, useEffect } from "react";
@@ -38,10 +37,10 @@ function Sidebar() {
   useEffect(() => {
     client
       .get("/userapi/user")
-      .then(function (res) {
+      .then(function () {
         setCurrentUser(true);
       })
-      .catch(function (error) {
+      .catch(function () {
         setCurrentUser(false);
       });
   }, []);

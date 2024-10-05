@@ -42,9 +42,6 @@ function Preloader() {
 
       prev = index;
     }, 1500);
-    const timeoutId = setTimeout(() => {
-      setIsVisible(false);
-    }, 8000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
