@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-i%vsb-f!htz+6*ayjz%83e+tg0a)i^c&0iphr)l2^q1a7$5)t@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["backendflutterforecast.onrender.com" , "127.0.0.1" , "0.0.0.0" , "localhost"]
 
 CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
@@ -159,6 +159,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173", "https://flutterforecast.onrender.com/"]
+CORS_ALLOW_CREDENTIALS = True
 
 SESSION_COOKIE_SAMESITE = "None"
 SESSION_COOKIE_SECURE = True
