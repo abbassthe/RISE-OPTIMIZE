@@ -38,7 +38,7 @@ function Map() {
 
   const fetchPoints = async (year: number) => {
     const response = await axios.get(
-      `https://backendflutterforecast.onrender.com//api/eggs/${year}/?format=json`
+      `https://backendflutterforecast.onrender.com/api/eggs/${year}/?format=json`
     );
     const data = await response.data;
 
