@@ -44,7 +44,7 @@ export default function insects() {
     try {
       let ak = "";
       axios
-        .post("http://localhost:8000/insects/upload/", formData, {
+        .post("https://backendflutterforecast.onrender.com/insects/upload/", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
