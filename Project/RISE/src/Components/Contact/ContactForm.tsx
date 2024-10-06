@@ -60,23 +60,23 @@ const ContactForm: React.FC = () => {
       // Define template params
 
       axios
-        .get("https://backendflutterforecast.onrender.com/contactapi/contactusers?search=" + email)
+        .get("http://localhost:8000/contactapi/contactusers?search=" + email)
         .then(function (res) {
           am = parseInt(res.data[0].id);
           let msga = { user: am, msg: message };
-          axios.post("https://backendflutterforecast.onrender.com/contactapi/contactmsgs/", msga);
+          axios.post("http://localhost:8000/contactapi/contactmsgs/", msga);
         })
         .catch(function () {
           let user = { name: name, email: email };
-          axios.post("https://backendflutterforecast.onrender.com/contactapi/contactusers/", user);
+          axios.post("http://localhost:8000/contactapi/contactusers/", user);
           axios
             .get(
-              "https://backendflutterforecast.onrender.com/contactapi/contactusers?search=" + email
+              "http://localhost:8000/contactapi/contactusers?search=" + email
             )
             .then(function (res) {
               am = parseInt(res.data[0].id);
               let msga = { user: am, msg: message };
-              axios.post("https://backendflutterforecast.onrender.com/contactapi/contactmsgs/", msga);
+              axios.post("http://localhost:8000/contactapi/contactmsgs/", msga);
             });
         });
 

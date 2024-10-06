@@ -7,7 +7,7 @@ axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.withCredentials = true;
 
 const client = axios.create({
-  baseURL: "https://backendflutterforecast.onrender.com",
+  baseURL: "http://127.0.0.1:8000",
 });
 const Logout: React.FC = () => {
   const navigate = useNavigate();
